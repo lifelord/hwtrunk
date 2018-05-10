@@ -4,7 +4,9 @@ int main()
 {
 	CSocketServer g_SocketServer;
 
-	g_SocketServer.Init(INADDR_ANY,8001);
+	UnPackHandler g_UnpackHandler;
+
+	g_SocketServer.Init(INADDR_ANY,8001,&g_UnpackHandler);
 
 	g_SocketServer.Start();
 

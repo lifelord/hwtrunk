@@ -15,6 +15,7 @@ base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_clie
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_epoll.h
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_lock.h
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_net_define.h
+base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_queue.h
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_socket_server.h
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_stream.h
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_thread.h
@@ -28,4 +29,14 @@ base/src/CMakeFiles/base.dir/base_stream.cpp.o: ../base/src/base_stream.cpp
 base/src/CMakeFiles/base.dir/base_thread.cpp.o: ../base/include/base_thread.h
 base/src/CMakeFiles/base.dir/base_thread.cpp.o: ../base/include/base_util.h
 base/src/CMakeFiles/base.dir/base_thread.cpp.o: ../base/src/base_thread.cpp
+
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o: ../base/include/base_client_pool.h
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o: ../base/include/base_epoll.h
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o: ../base/include/base_lock.h
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o: ../base/include/base_net_define.h
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o: ../base/include/base_stream.h
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o: ../base/include/base_thread.h
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o: ../base/include/base_unpack.h
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o: ../base/include/base_util.h
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o: ../base/src/base_unpack.cpp
 

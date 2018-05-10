@@ -89,9 +89,10 @@ uint32 CEpoll::Efd_wait(struct Event* e,uint32 max)
 	uint32 n = epoll_wait(m_efd,ev,max,-1);
 	for(uint32 i=0;i<n;++i)
 	{
-		Event* pEvn = (Event*)ev[i].data.ptr;
-		e[i].fd = pEvn->fd;//fd
+		e[i].fd = *(uint32*)ev[i].data.ptr;//fd
+
 		unsigned flag = ev[i].events;//event
+
 		e[i].read = (flag & EPOLLIN) != 0;
 		e[i].write = (flag & EPOLLOUT) != 0;
 		e[i].error = (flag & EPOLLERR) != 0;

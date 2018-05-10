@@ -260,6 +260,33 @@ base_thread.cpp.s:
 	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_thread.cpp.s
 .PHONY : base_thread.cpp.s
 
+base_unpack.o: base_unpack.cpp.o
+
+.PHONY : base_unpack.o
+
+# target to build an object file
+base_unpack.cpp.o:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_unpack.cpp.o
+.PHONY : base_unpack.cpp.o
+
+base_unpack.i: base_unpack.cpp.i
+
+.PHONY : base_unpack.i
+
+# target to preprocess a source file
+base_unpack.cpp.i:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_unpack.cpp.i
+.PHONY : base_unpack.cpp.i
+
+base_unpack.s: base_unpack.cpp.s
+
+.PHONY : base_unpack.s
+
+# target to generate assembly for a file
+base_unpack.cpp.s:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_unpack.cpp.s
+.PHONY : base_unpack.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -284,6 +311,9 @@ help:
 	@echo "... base_thread.o"
 	@echo "... base_thread.i"
 	@echo "... base_thread.s"
+	@echo "... base_unpack.o"
+	@echo "... base_unpack.i"
+	@echo "... base_unpack.s"
 .PHONY : help
 
 

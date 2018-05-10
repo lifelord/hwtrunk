@@ -12,6 +12,33 @@ BaseUser::~BaseUser()
 	
 }
 
+bool BaseUser::OnRecv(char* pData,uint32 sz)
+{
+	
+}
+
+bool BaseUser::push_data(void* buff,uint32 nLen)
+{
+	if(nLen == 0)
+	{
+		m_size = 0;
+		return false;
+	}
+	if ((m_size + nLen) > GATE_BUFF_SIZE)
+	{
+		uint32 pos = GATE_BUFF_SIZE - m_size;
+
+		memmove(m_data, buff, pos);
+
+		m_size += pos;
+	}
+	else
+	{
+		memmove(m_data, buff, nLen);
+	}
+	return true;
+}
+
 bool BaseUser::push_data(CStream& data)
 {
 	if (data.length() == 0)
@@ -65,7 +92,7 @@ bool BaseUser::read()
 		}
 		uint32 pack_len = pCltHead->pack_len;
 
-		if (!OnRevice(pBuffer, pack_len))
+		if (!OnRecv(pBuffer, pack_len))
 		{
 			return false;
 		}

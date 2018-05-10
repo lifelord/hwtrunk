@@ -10,10 +10,11 @@ class BaseUser
 public:
 	BaseUser();
 	virtual ~BaseUser();
-	virtual bool OnRevice(char* pData,uint32 sz) = 0;
-	virtual void OnClose() = 0;
-	virtual void OnReset() = 0;
+	virtual bool OnRecv(char* pData,uint32 sz);
+	virtual void OnClose(){};
+	virtual void OnReset(){};
 	bool push_data(CStream& data);
+	bool push_data(void* buff,uint32 nLen);
 	bool read();
 public:
 	uint32& GetSockfd() { return m_Sockfd; }

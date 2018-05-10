@@ -16,6 +16,7 @@ base/src/CMakeFiles/base.dir/base_socket_server.cpp.o
  ../base/include/base_epoll.h
  ../base/include/base_lock.h
  ../base/include/base_net_define.h
+ ../base/include/base_queue.h
  ../base/include/base_socket_server.h
  ../base/include/base_stream.h
  ../base/include/base_thread.h
@@ -29,3 +30,13 @@ base/src/CMakeFiles/base.dir/base_thread.cpp.o
  ../base/include/base_thread.h
  ../base/include/base_util.h
  /home/game/server/hwtrunk/base/src/base_thread.cpp
+base/src/CMakeFiles/base.dir/base_unpack.cpp.o
+ ../base/include/base_client_pool.h
+ ../base/include/base_epoll.h
+ ../base/include/base_lock.h
+ ../base/include/base_net_define.h
+ ../base/include/base_stream.h
+ ../base/include/base_thread.h
+ ../base/include/base_unpack.h
+ ../base/include/base_util.h
+ /home/game/server/hwtrunk/base/src/base_unpack.cpp

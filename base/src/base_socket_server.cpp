@@ -8,6 +8,15 @@ CSocketServer::~CSocketServer()
 {
 }
 
+void CSocketServer::DoError(Event& ev)
+{
+	if(ev.error)
+	{
+		m_epoll.Efd_del(ev.fd);
+		close(ev.fd);
+	}
+}
+
 void CSocketServer::DoRead(Event& ev)
 {
 	//处理读事件
@@ -18,32 +27,31 @@ void CSocketServer::DoRead(Event& ev)
 		{
 			//accept a new socket
 			uint32 newfd = accept(ev.fd,NULL,NULL);
-			SocketData* pData = NewSocketData(newfd);
-			if(pData)
-			{
-				m_epoll.Efd_add(newfd,&pData->ev,m_Et);
-			}
+
+			Event newEvt;
+
+			newEvt.fd = newfd;
+
+			m_epoll.Efd_add(newfd,&newfd,m_Et);
+
 			cout << "accept:" << newfd << endl;
+
+			//新连接
+			m_pHandler->accept_handler(newfd);
+
 			return;
 		}else
 		{
 			for(;;)
 			{
 				static char buff[1024];
+
 				int32 nSize = recv(ev.fd, buff, sizeof(buff), MSG_DONTWAIT);
+
 				if( nSize > 0)
 				{
-					AutoLock safe(&m_Lock);
-
-					SocketData* pData = GetSocketData(ev.fd);
-
-					if(pData == NULL)
-					{
-						cout << "error GetSocketData fd=" << ev.fd << endl;
-						return;
-					}
-
-					pData->rbuffer.write(buff,nSize);
+					//接收数据
+					m_pHandler->recv_handler(ev.fd,buff,nSize);
 
 					cout << "recv:" << buff << ",nSize=" << nSize <<endl;
 
@@ -53,9 +61,8 @@ void CSocketServer::DoRead(Event& ev)
 					//2、小于0是错误,EAGAIN错误不处理,其他错误关闭连接
 					if (errno != EAGAIN || nSize == 0)
 					{
-						DelSocketData(ev.fd);
-
-						cout << "close:fd = " << ev.fd << endl;
+						//关闭
+						m_pHandler->close_handler(ev.fd);
 
 						return;
 					}else
@@ -68,13 +75,9 @@ void CSocketServer::DoRead(Event& ev)
 				{
 					break;
 				}
-			}
-			//for test
-			char buff2[512] = {"hello,client"};
-			Write(ev.fd,buff2,sizeof(buff2));	
+			}	
 		}
 	}
-	return;
 }
 
 void CSocketServer::DoWrite(Event& ev)
@@ -85,38 +88,9 @@ void CSocketServer::DoWrite(Event& ev)
 
 		for(;;)
 		{
-			AutoLock safe(&m_Lock);
+			//处理写事件
+			m_pHandler->write_handler(ev.fd);
 
-			SocketData* pData = GetSocketData(ev.fd);
-
-			if(pData == NULL)
-			{
-				cout << "error fd=" << ev.fd << endl;
-				return;
-			}
-
-			//处理写事件,send
-			int32 size = send(ev.fd, &pData->wbuffer[0], pData->wbuffer.length(), MSG_DONTWAIT );//发送之
-
-			if (size <= 0)
-			{
-				if(errno == EAGAIN)
-				{
-					//send操作由于缓冲区满阻塞,fd设置了非阻塞,直接返回,需重新send数据
-					m_epoll.Efd_write(ev.fd,&pData->ev,true);
-				}else
-				{
-					//其他操作把数据缓存清空,重置ev[i].fd为EPOLLIN
-					pData->wbuffer.clear();
-					m_epoll.Efd_write(ev.fd,&pData->ev,false);
-				}
-				return;
-			}else
-			{
-				//发送了size字节数据
-				pData->wbuffer.position(size);
-				pData->wbuffer.erase();
-			}
 			//非Et模式只执行一次
 			if(!m_Et)
 			{
@@ -141,13 +115,8 @@ int CSocketServer::Run()
 		for(uint32 i = 0;i<n;++i)
 		{
 			cout << ev[i].fd << ":" << ev[i].error << ":" << ev[i].read << ":" << ev[i].write << endl;
-			if(ev[i].error)
-			{
-				cout << "error,fd =" << ev[i].fd << endl;
-				//处理错误,关闭描述符
-				DelSocketData(ev[i].fd);
-				continue;
-			}
+
+			DoError(ev[i]);
 
 			DoRead(ev[i]);
 
@@ -158,9 +127,11 @@ int CSocketServer::Run()
 	return 0;
 }
 
-void CSocketServer::Init(uint16 nIP,uint16 nPort,bool et)
+void CSocketServer::Init(uint16 nIP,uint16 nPort,BaseHandler* pHandler,bool et)
 {
 	m_epoll.Efd_create(1024);
+
+	m_pHandler = pHandler;
 
 	m_Et = et;
 
@@ -177,70 +148,5 @@ void CSocketServer::Init(uint16 nIP,uint16 nPort,bool et)
 
 	cout << "m_listenfd = " << m_listenfd << ",ip=" << nIP << endl;
 
-	SocketData* pData = NewSocketData(m_listenfd);
-
-	if(pData)
-	{
-		m_epoll.Efd_add(m_listenfd,&pData->ev,m_Et);
-	}
-}
-
-void CSocketServer::Write(uint32 fd,void* buffer,uint32 nlen)
-{
-	AutoLock safe(&m_Lock);
-
-	SocketData* pData = GetSocketData(fd);
-	if(pData != NULL)
-	{
-		pData->wbuffer.write(buffer,nlen);
-		m_epoll.Efd_write(fd,&pData->ev,true);
-	}
-}
-
-SocketData* CSocketServer::NewSocketData(uint32 fd)
-{
-	AutoLock safe(&m_Lock);
-
-	if ( fd == -1 || fd < 0 )
-	{
-		return NULL;
-	}
-	MAPSOCKETDATA::iterator itr = m_SocketData.find(fd);
-
-	if (itr != m_SocketData.end())
-	{
-		return itr->second;
-	}
-
-	SocketData* pData = new SocketData;
-	pData->fd = fd;
-	pData->ev.fd = fd;
-	m_SocketData.insert(make_pair(fd,pData));
-
-	return pData;
-}
-
-SocketData* CSocketServer::GetSocketData(uint32 fd)
-{
-	MAPSOCKETDATA::iterator itr = m_SocketData.find(fd);
-	if( itr != m_SocketData.end())
-	{
-		return itr->second;
-	}
-	return NULL;
-}
-
-void CSocketServer::DelSocketData(uint32 fd)
-{
-	AutoLock safe(&m_Lock);
-
-	MAPSOCKETDATA::iterator itr = m_SocketData.find(fd);
-	if(itr != m_SocketData.end())
-	{
-		m_epoll.Efd_del(fd);
-		close(fd);
-		delete itr->second;
-		itr->second = NULL;
-		m_SocketData.erase(fd);
-	}
+	m_epoll.Efd_add(m_listenfd,&m_listenfd,m_Et);
 }

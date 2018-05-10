@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/game/server/hwtrunk/base/src/base_socket_server.cpp" "/home/game/server/hwtrunk/build/base/src/CMakeFiles/base.dir/base_socket_server.cpp.o"
   "/home/game/server/hwtrunk/base/src/base_stream.cpp" "/home/game/server/hwtrunk/build/base/src/CMakeFiles/base.dir/base_stream.cpp.o"
   "/home/game/server/hwtrunk/base/src/base_thread.cpp" "/home/game/server/hwtrunk/build/base/src/CMakeFiles/base.dir/base_thread.cpp.o"
+  "/home/game/server/hwtrunk/base/src/base_unpack.cpp" "/home/game/server/hwtrunk/build/base/src/CMakeFiles/base.dir/base_unpack.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

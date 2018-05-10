@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<vector>
+#include<list>
 #include<map>
 #include<pthread.h>
 #include<semaphore.h>
