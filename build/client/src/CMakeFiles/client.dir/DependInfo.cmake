@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/game/server/mycode/hwtrunk/client/src/main.cpp" "/home/game/server/mycode/hwtrunk/build/client/src/CMakeFiles/client.dir/main.cpp.o"
+  "/home/game/server/hwtrunk/client/src/main.cpp" "/home/game/server/hwtrunk/build/client/src/CMakeFiles/client.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

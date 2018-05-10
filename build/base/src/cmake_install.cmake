@@ -1,4 +1,4 @@
-# Install script for directory: /home/game/server/mycode/hwtrunk/base/src
+# Install script for directory: /home/game/server/hwtrunk/base/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

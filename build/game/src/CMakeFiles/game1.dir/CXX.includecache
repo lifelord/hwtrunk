@@ -92,7 +92,7 @@ unistd.h
 pthread.h
 -
 
-/home/game/server/mycode/hwtrunk/game/src/main.cpp
+/home/game/server/hwtrunk/game/src/main.cpp
 base_include.h
-/home/game/server/mycode/hwtrunk/game/src/base_include.h
+/home/game/server/hwtrunk/game/src/base_include.h
 

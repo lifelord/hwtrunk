@@ -1,75 +1,28 @@
 base_socket_server.cpp
-中的run
 //处理读事件
-			if( ev[i].read)
+if( ev[i].read)
+{
+	//1、接收新socket
+	if (ev[i].fd == m_listenfd)
+	{
+		//accept a new socket
+		uint32 newfd = accept(ev[i].fd,NULL,NULL);
+
+		cout << "accept:" << newfd << endl;
+
+		//设置新接收的描述符为非阻塞
+		NewSocketData(newfd);
+		m_epoll.Efd_add(newfd,&pData->ev,m_Et);
+		continue;
+	}else
+	{
+		//2、描述符fd有数据,回调函数cb不为NULL,recv,描述符同时也可能有可写数据,所以不用continue
+		/*if(pData->cb != NULL)
+		{*/
+			static char buff[1024];
+			int32 nSize = recv(ev[i].fd, buff, sizeof(buff), MSG_DONTWAIT);
+			if( nSize > 0)
 			{
-				//1、接收新socket
-				if (ev[i].fd == m_listenfd)
-				{
-					//accept a new socket
-					uint32 newfd = accept(ev[i].fd,NULL,NULL);
-
-					cout << "accept:" << newfd << endl;
-
-					//设置新接收的描述符为非阻塞
-					NewSocketData(newfd);
-					m_epoll.Efd_add(newfd,&pData->ev,m_Et);
-					continue;
-				}else
-				{
-					//2、描述符fd有数据,回调函数cb不为NULL,recv,描述符同时也可能有可写数据,所以不用continue
-					/*if(pData->cb != NULL)
-					{*/
-						static char buff[1024];
-						int32 nSize = recv(ev[i].fd, buff, sizeof(buff), MSG_DONTWAIT);
-						if( nSize > 0)
-						{
-							AutoLock safe(&m_Lock);
-
-							SocketData* pData = GetSocketData(ev[i].fd);
-
-							if(pData == NULL)
-							{
-								cout << "error fd=" << ev[i].fd << endl;
-								continue;
-							}
-
-							pData->rbuffer.write(buff,nSize);
-
-							cout << "recv:" << buff << ",nSize=" << nSize <<endl;
-
-						}else if (nSize <= 0)
-						{
-							//1、recv返回0有两种情况,一种是请求接收的字节只有0了(这里显示不是),一种是对端socket close或shutdown了,
-							//2、小于0是错误,EAGAIN错误不处理,其他错误关闭连接
-							if (errno != EAGAIN || nSize == 0)
-							{
-								DelSocketData(ev[i].fd);
-
-								cout << "close:nSize = " << nSize << endl;
-
-								continue;
-							}
-						}
-					/*}else
-					{
-						//没有设置回调函数
-						m_epoll.Efd_del(ev[i].fd);
-
-						close(ev[i].fd);
-
-						DelSocketData(ev[i].fd);
-
-						continue;
-					}*/
-						//char buff2[512] = {"hello,client"};
-						//Write(ev[i].fd,buff2,sizeof(buff2));
-				}
-			}
-			if(ev[i].write)
-			{
-				cout << "write" << endl;
-
 				AutoLock safe(&m_Lock);
 
 				SocketData* pData = GetSocketData(ev[i].fd);
@@ -80,31 +33,77 @@ base_socket_server.cpp
 					continue;
 				}
 
-				//处理写事件,send
-				int32 size = send(ev[i].fd, &pData->wbuffer[0], pData->wbuffer.length(), MSG_DONTWAIT );//发送之
+				pData->rbuffer.write(buff,nSize);
 
-				if (size <= 0)
-				{
-					switch(errno)
-					{
-						case EAGAIN:
-						case ENOBUFS:
-						{
-							//send操作由于缓冲区满阻塞,fd设置了非阻塞,直接返回,需重新send数据
-							m_epoll.Efd_write(ev[i].fd,&pData->ev,true);
-						}break;
-						default:
-						{
-							//其他操作把数据缓存清空,重置ev[i].fd为EPOLLIN
-							pData->wbuffer.clear();
+				cout << "recv:" << buff << ",nSize=" << nSize <<endl;
 
-							m_epoll.Efd_write(ev[i].fd,&pData->ev,false);
-						}
-					}
-				}else
+			}else if (nSize <= 0)
+			{
+				//1、recv返回0有两种情况,一种是请求接收的字节只有0了(这里显示不是),一种是对端socket close或shutdown了,
+				//2、小于0是错误,EAGAIN错误不处理,其他错误关闭连接
+				if (errno != EAGAIN || nSize == 0)
 				{
-					//发送了size字节数据
-					pData->wbuffer.position(size);
-					pData->wbuffer.erase();
+					DelSocketData(ev[i].fd);
+
+					cout << "close:nSize = " << nSize << endl;
+
+					continue;
 				}
 			}
+		/*}else
+		{
+			//没有设置回调函数
+			m_epoll.Efd_del(ev[i].fd);
+
+			close(ev[i].fd);
+
+			DelSocketData(ev[i].fd);
+
+			continue;
+		}*/
+			//char buff2[512] = {"hello,client"};
+			//Write(ev[i].fd,buff2,sizeof(buff2));
+	}
+}
+if(ev[i].write)
+{
+	cout << "write" << endl;
+
+	AutoLock safe(&m_Lock);
+
+	SocketData* pData = GetSocketData(ev[i].fd);
+
+	if(pData == NULL)
+	{
+		cout << "error fd=" << ev[i].fd << endl;
+		continue;
+	}
+
+	//处理写事件,send
+	int32 size = send(ev[i].fd, &pData->wbuffer[0], pData->wbuffer.length(), MSG_DONTWAIT );//发送之
+
+	if (size <= 0)
+	{
+		switch(errno)
+		{
+			case EAGAIN:
+			case ENOBUFS:
+			{
+				//send操作由于缓冲区满阻塞,fd设置了非阻塞,直接返回,需重新send数据
+				m_epoll.Efd_write(ev[i].fd,&pData->ev,true);
+			}break;
+			default:
+			{
+				//其他操作把数据缓存清空,重置ev[i].fd为EPOLLIN
+				pData->wbuffer.clear();
+
+				m_epoll.Efd_write(ev[i].fd,&pData->ev,false);
+			}
+		}
+	}else
+	{
+		//发送了size字节数据
+		pData->wbuffer.position(size);
+		pData->wbuffer.erase();
+	}
+}

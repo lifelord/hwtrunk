@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/game/server/mycode/hwtrunk/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/game/server/hwtrunk/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/game/server/mycode/hwtrunk/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/game/server/hwtrunk/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9d5a8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_9d5a8.dir/build.make CMakeFiles/cmTC_9d5a8.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_9d5a8.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_9d5a8.dir/testCCompiler.c.o   -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_9d5a8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d5a8.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_9d5a8.dir/testCCompiler.c.o  -o cmTC_9d5a8 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_5a38a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5a38a.dir/build.make CMakeFiles/cmTC_5a38a.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5a38a.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_5a38a.dir/testCCompiler.c.o   -c /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_5a38a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a38a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5a38a.dir/testCCompiler.c.o  -o cmTC_5a38a 
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_40dd5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_40dd5.dir/build.make CMakeFiles/cmTC_40dd5.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_40dd5.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_40dd5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_40dd5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40dd5.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_40dd5.dir/CMakeCCompilerABI.c.o  -o cmTC_40dd5 
+Run Build Command:"/usr/bin/make" "cmTC_41da9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_41da9.dir/build.make CMakeFiles/cmTC_41da9.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_41da9.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_41da9.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_41da9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41da9.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_41da9.dir/CMakeCCompilerABI.c.o  -o cmTC_41da9 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
@@ -59,24 +59,24 @@ Thread model: posix
 gcc version 6.2.0 20161010 (Debian 6.2.0-6) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_40dd5' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9ZmuTN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_40dd5 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_40dd5.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_40dd5' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_41da9' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrDP9AZ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_41da9 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_41da9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_41da9' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_40dd5/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_40dd5.dir/build.make CMakeFiles/cmTC_40dd5.dir/build]
-  ignore line: [make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_40dd5.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_40dd5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_40dd5]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40dd5.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_40dd5.dir/CMakeCCompilerABI.c.o  -o cmTC_40dd5 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_41da9/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_41da9.dir/build.make CMakeFiles/cmTC_41da9.dir/build]
+  ignore line: [make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_41da9.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_41da9.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_41da9]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41da9.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_41da9.dir/CMakeCCompilerABI.c.o  -o cmTC_41da9 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
@@ -86,13 +86,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 6.2.0 20161010 (Debian 6.2.0-6) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_40dd5' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9ZmuTN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_40dd5 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_40dd5.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_41da9' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrDP9AZ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_41da9 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_41da9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc9ZmuTN.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccrDP9AZ.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -108,7 +108,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_40dd5] ==> ignore
+    arg [cmTC_41da9] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o] ==> ignore
@@ -120,7 +120,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
-    arg [CMakeFiles/cmTC_40dd5.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_41da9.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -148,17 +148,19 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ebf7c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ebf7c.dir/build.make CMakeFiles/cmTC_ebf7c.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ebf7c.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_ebf7c.dir/feature_tests.c.o   -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_ebf7c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ebf7c.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ebf7c.dir/feature_tests.c.o  -o cmTC_ebf7c 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_9fcfd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9fcfd.dir/build.make CMakeFiles/cmTC_9fcfd.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File '/home/game/server/hwtrunk/build/CMakeFiles/feature_tests.c' has modification time 44057 s in the future
+Building C object CMakeFiles/cmTC_9fcfd.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_9fcfd.dir/feature_tests.c.o   -c /home/game/server/hwtrunk/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_9fcfd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9fcfd.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_9fcfd.dir/feature_tests.c.o  -o cmTC_9fcfd 
+make[1]: 警告：检测到时钟错误。您的创建可能是不完整的。
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -168,17 +170,19 @@ make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CM
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_486cc/fast"
-/usr/bin/make -f CMakeFiles/cmTC_486cc.dir/build.make CMakeFiles/cmTC_486cc.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_486cc.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_486cc.dir/feature_tests.c.o   -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_486cc
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_486cc.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_486cc.dir/feature_tests.c.o  -o cmTC_486cc 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_27b56/fast"
+/usr/bin/make -f CMakeFiles/cmTC_27b56.dir/build.make CMakeFiles/cmTC_27b56.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File '/home/game/server/hwtrunk/build/CMakeFiles/feature_tests.c' has modification time 44057 s in the future
+Building C object CMakeFiles/cmTC_27b56.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_27b56.dir/feature_tests.c.o   -c /home/game/server/hwtrunk/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_27b56
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_27b56.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_27b56.dir/feature_tests.c.o  -o cmTC_27b56 
+make[1]: 警告：检测到时钟错误。您的创建可能是不完整的。
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -188,17 +192,19 @@ make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CM
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_02a26/fast"
-/usr/bin/make -f CMakeFiles/cmTC_02a26.dir/build.make CMakeFiles/cmTC_02a26.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_02a26.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_02a26.dir/feature_tests.c.o   -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_02a26
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_02a26.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_02a26.dir/feature_tests.c.o  -o cmTC_02a26 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_70c52/fast"
+/usr/bin/make -f CMakeFiles/cmTC_70c52.dir/build.make CMakeFiles/cmTC_70c52.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File '/home/game/server/hwtrunk/build/CMakeFiles/feature_tests.c' has modification time 44057 s in the future
+Building C object CMakeFiles/cmTC_70c52.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_70c52.dir/feature_tests.c.o   -c /home/game/server/hwtrunk/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_70c52
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70c52.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_70c52.dir/feature_tests.c.o  -o cmTC_70c52 
+make[1]: 警告：检测到时钟错误。您的创建可能是不完整的。
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -206,30 +212,30 @@ make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CM
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c8512/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c8512.dir/build.make CMakeFiles/cmTC_c8512.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_c8512.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_c8512.dir/testCXXCompiler.cxx.o -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_c8512
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8512.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_c8512.dir/testCXXCompiler.cxx.o  -o cmTC_c8512 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_37000/fast"
+/usr/bin/make -f CMakeFiles/cmTC_37000.dir/build.make CMakeFiles/cmTC_37000.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_37000.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_37000.dir/testCXXCompiler.cxx.o -c /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_37000
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37000.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_37000.dir/testCXXCompiler.cxx.o  -o cmTC_37000 
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_af27e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_af27e.dir/build.make CMakeFiles/cmTC_af27e.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_af27e.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_af27e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_af27e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af27e.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_af27e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_af27e 
+Run Build Command:"/usr/bin/make" "cmTC_3244c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3244c.dir/build.make CMakeFiles/cmTC_3244c.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3244c.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_3244c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_3244c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3244c.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_3244c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3244c 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
@@ -239,24 +245,24 @@ Thread model: posix
 gcc version 6.2.0 20161010 (Debian 6.2.0-6) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_af27e' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXhtvH4.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_af27e /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_af27e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_af27e' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3244c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsrY4va.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3244c /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_3244c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3244c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_af27e/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_af27e.dir/build.make CMakeFiles/cmTC_af27e.dir/build]
-  ignore line: [make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_af27e.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_af27e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_af27e]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af27e.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_af27e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_af27e ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_3244c/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_3244c.dir/build.make CMakeFiles/cmTC_3244c.dir/build]
+  ignore line: [make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_3244c.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_3244c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_3244c]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3244c.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_3244c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3244c ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
@@ -266,13 +272,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 6.2.0 20161010 (Debian 6.2.0-6) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_af27e' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXhtvH4.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_af27e /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_af27e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3244c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsrY4va.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3244c /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_3244c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtend.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccXhtvH4.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccsrY4va.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -288,7 +294,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_af27e] ==> ignore
+    arg [cmTC_3244c] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbegin.o] ==> ignore
@@ -300,7 +306,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
-    arg [CMakeFiles/cmTC_af27e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_3244c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -326,17 +332,19 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6a3ef/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6a3ef.dir/build.make CMakeFiles/cmTC_6a3ef.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6a3ef.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_6a3ef.dir/feature_tests.cxx.o -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_6a3ef
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6a3ef.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_6a3ef.dir/feature_tests.cxx.o  -o cmTC_6a3ef 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_5de10/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5de10.dir/build.make CMakeFiles/cmTC_5de10.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File '/home/game/server/hwtrunk/build/CMakeFiles/feature_tests.cxx' has modification time 44057 s in the future
+Building CXX object CMakeFiles/cmTC_5de10.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_5de10.dir/feature_tests.cxx.o -c /home/game/server/hwtrunk/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_5de10
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5de10.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_5de10.dir/feature_tests.cxx.o  -o cmTC_5de10 
+make[1]: 警告：检测到时钟错误。您的创建可能是不完整的。
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -399,17 +407,19 @@ make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CM
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_eb2ec/fast"
-/usr/bin/make -f CMakeFiles/cmTC_eb2ec.dir/build.make CMakeFiles/cmTC_eb2ec.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_eb2ec.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_eb2ec.dir/feature_tests.cxx.o -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_eb2ec
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb2ec.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_eb2ec.dir/feature_tests.cxx.o  -o cmTC_eb2ec 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_df12f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_df12f.dir/build.make CMakeFiles/cmTC_df12f.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File '/home/game/server/hwtrunk/build/CMakeFiles/feature_tests.cxx' has modification time 44057 s in the future
+Building CXX object CMakeFiles/cmTC_df12f.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_df12f.dir/feature_tests.cxx.o -c /home/game/server/hwtrunk/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_df12f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_df12f.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_df12f.dir/feature_tests.cxx.o  -o cmTC_df12f 
+make[1]: 警告：检测到时钟错误。您的创建可能是不完整的。
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -472,17 +482,19 @@ make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CM
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0128e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0128e.dir/build.make CMakeFiles/cmTC_0128e.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_0128e.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_0128e.dir/feature_tests.cxx.o -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_0128e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0128e.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_0128e.dir/feature_tests.cxx.o  -o cmTC_0128e 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_fa7b4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fa7b4.dir/build.make CMakeFiles/cmTC_fa7b4.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File '/home/game/server/hwtrunk/build/CMakeFiles/feature_tests.cxx' has modification time 44057 s in the future
+Building CXX object CMakeFiles/cmTC_fa7b4.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_fa7b4.dir/feature_tests.cxx.o -c /home/game/server/hwtrunk/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_fa7b4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa7b4.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_fa7b4.dir/feature_tests.cxx.o  -o cmTC_fa7b4 
+make[1]: 警告：检测到时钟错误。您的创建可能是不完整的。
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -545,17 +557,19 @@ make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CM
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_24a75/fast"
-/usr/bin/make -f CMakeFiles/cmTC_24a75.dir/build.make CMakeFiles/cmTC_24a75.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_24a75.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_24a75.dir/feature_tests.cxx.o -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_24a75
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24a75.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_24a75.dir/feature_tests.cxx.o  -o cmTC_24a75 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_e15fe/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e15fe.dir/build.make CMakeFiles/cmTC_e15fe.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File '/home/game/server/hwtrunk/build/CMakeFiles/feature_tests.cxx' has modification time 44057 s in the future
+Building CXX object CMakeFiles/cmTC_e15fe.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_e15fe.dir/feature_tests.cxx.o -c /home/game/server/hwtrunk/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_e15fe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e15fe.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_e15fe.dir/feature_tests.cxx.o  -o cmTC_e15fe 
+make[1]: 警告：检测到时钟错误。您的创建可能是不完整的。
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -616,30 +630,30 @@ make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CM
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_255a3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_255a3.dir/build.make CMakeFiles/cmTC_255a3.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_255a3.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_255a3.dir/CheckIncludeFile.c.o   -c /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_255a3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_255a3.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_255a3.dir/CheckIncludeFile.c.o  -o cmTC_255a3 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_3130f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3130f.dir/build.make CMakeFiles/cmTC_3130f.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3130f.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3130f.dir/CheckIncludeFile.c.o   -c /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_3130f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3130f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3130f.dir/CheckIncludeFile.c.o  -o cmTC_3130f 
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp
+Change Dir: /home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1eba9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1eba9.dir/build.make CMakeFiles/cmTC_1eba9.dir/build
-make[1]: Entering directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1eba9.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_1eba9.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_1eba9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1eba9.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_1eba9.dir/CheckFunctionExists.c.o  -o cmTC_1eba9 -lpthread 
-make[1]: Leaving directory '/home/game/server/mycode/hwtrunk/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_0830e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0830e.dir/build.make CMakeFiles/cmTC_0830e.dir/build
+make[1]: Entering directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0830e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0830e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0830e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0830e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_0830e.dir/CheckFunctionExists.c.o  -o cmTC_0830e -lpthread 
+make[1]: Leaving directory '/home/game/server/hwtrunk/build/CMakeFiles/CMakeTmp'
 
 

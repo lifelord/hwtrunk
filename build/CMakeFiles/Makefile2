@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/game/server/mycode/hwtrunk
+CMAKE_SOURCE_DIR = /home/game/server/hwtrunk
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/game/server/mycode/hwtrunk/build
+CMAKE_BINARY_DIR = /home/game/server/hwtrunk/build
 
 #=============================================================================
 # Directory level rules for directory base/src
@@ -84,7 +84,7 @@ base/src/preinstall:
 base/src/CMakeFiles/base.dir/all:
 	$(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/depend
 	$(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/game/server/mycode/hwtrunk/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target base"
 .PHONY : base/src/CMakeFiles/base.dir/all
 
 # Include target in all.
@@ -94,9 +94,9 @@ all: base/src/CMakeFiles/base.dir/all
 
 # Build rule for subdir invocation for target.
 base/src/CMakeFiles/base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/mycode/hwtrunk/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 base/src/CMakeFiles/base.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/mycode/hwtrunk/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles 0
 .PHONY : base/src/CMakeFiles/base.dir/rule
 
 # Convenience name for target.
@@ -139,7 +139,7 @@ game/src/preinstall:
 game/src/CMakeFiles/game1.dir/all:
 	$(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/depend
 	$(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/game/server/mycode/hwtrunk/build/CMakeFiles --progress-num=9,10 "Built target game1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=9,10 "Built target game1"
 .PHONY : game/src/CMakeFiles/game1.dir/all
 
 # Include target in all.
@@ -149,9 +149,9 @@ all: game/src/CMakeFiles/game1.dir/all
 
 # Build rule for subdir invocation for target.
 game/src/CMakeFiles/game1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/mycode/hwtrunk/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 game/src/CMakeFiles/game1.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/mycode/hwtrunk/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles 0
 .PHONY : game/src/CMakeFiles/game1.dir/rule
 
 # Convenience name for target.
@@ -194,7 +194,7 @@ client/src/preinstall:
 client/src/CMakeFiles/client.dir/all:
 	$(MAKE) -f client/src/CMakeFiles/client.dir/build.make client/src/CMakeFiles/client.dir/depend
 	$(MAKE) -f client/src/CMakeFiles/client.dir/build.make client/src/CMakeFiles/client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/game/server/mycode/hwtrunk/build/CMakeFiles --progress-num=7,8 "Built target client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=7,8 "Built target client"
 .PHONY : client/src/CMakeFiles/client.dir/all
 
 # Include target in all.
@@ -204,9 +204,9 @@ all: client/src/CMakeFiles/client.dir/all
 
 # Build rule for subdir invocation for target.
 client/src/CMakeFiles/client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/mycode/hwtrunk/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 client/src/CMakeFiles/client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/mycode/hwtrunk/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles 0
 .PHONY : client/src/CMakeFiles/client.dir/rule
 
 # Convenience name for target.

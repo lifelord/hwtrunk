@@ -11,4 +11,4 @@ game/src/CMakeFiles/game1.dir/main.cpp.o
  ../base/include/base_stream.h
  ../base/include/base_thread.h
  ../base/include/base_util.h
- /home/game/server/mycode/hwtrunk/game/src/main.cpp
+ /home/game/server/hwtrunk/game/src/main.cpp

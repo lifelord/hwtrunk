@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/game/server/mycode/hwtrunk
+CMAKE_SOURCE_DIR = /home/game/server/hwtrunk
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/game/server/mycode/hwtrunk/build
+CMAKE_BINARY_DIR = /home/game/server/hwtrunk/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/game/server/mycode/hwtrunk/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/mycode/hwtrunk/build/CMakeFiles /home/game/server/mycode/hwtrunk/build/base/src/CMakeFiles/progress.marks
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/mycode/hwtrunk/build/CMakeFiles 0
+	cd /home/game/server/hwtrunk/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles /home/game/server/hwtrunk/build/base/src/CMakeFiles/progress.marks
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/clean
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/preinstall
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/preinstall
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/game/server/mycode/hwtrunk/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/game/server/hwtrunk/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 base/src/CMakeFiles/base.dir/rule:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/CMakeFiles/base.dir/rule
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 base/src/CMakeFiles/base.dir/rule
 .PHONY : base/src/CMakeFiles/base.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ base: base/src/CMakeFiles/base.dir/rule
 
 # fast build rule for target.
 base/fast:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/build
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/build
 .PHONY : base/fast
 
 base_client_pool.o: base_client_pool.cpp.o
@@ -131,7 +131,7 @@ base_client_pool.o: base_client_pool.cpp.o
 
 # target to build an object file
 base_client_pool.cpp.o:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_client_pool.cpp.o
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_client_pool.cpp.o
 .PHONY : base_client_pool.cpp.o
 
 base_client_pool.i: base_client_pool.cpp.i
@@ -140,7 +140,7 @@ base_client_pool.i: base_client_pool.cpp.i
 
 # target to preprocess a source file
 base_client_pool.cpp.i:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_client_pool.cpp.i
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_client_pool.cpp.i
 .PHONY : base_client_pool.cpp.i
 
 base_client_pool.s: base_client_pool.cpp.s
@@ -149,7 +149,7 @@ base_client_pool.s: base_client_pool.cpp.s
 
 # target to generate assembly for a file
 base_client_pool.cpp.s:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_client_pool.cpp.s
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_client_pool.cpp.s
 .PHONY : base_client_pool.cpp.s
 
 base_epoll.o: base_epoll.cpp.o
@@ -158,7 +158,7 @@ base_epoll.o: base_epoll.cpp.o
 
 # target to build an object file
 base_epoll.cpp.o:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_epoll.cpp.o
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_epoll.cpp.o
 .PHONY : base_epoll.cpp.o
 
 base_epoll.i: base_epoll.cpp.i
@@ -167,7 +167,7 @@ base_epoll.i: base_epoll.cpp.i
 
 # target to preprocess a source file
 base_epoll.cpp.i:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_epoll.cpp.i
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_epoll.cpp.i
 .PHONY : base_epoll.cpp.i
 
 base_epoll.s: base_epoll.cpp.s
@@ -176,7 +176,7 @@ base_epoll.s: base_epoll.cpp.s
 
 # target to generate assembly for a file
 base_epoll.cpp.s:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_epoll.cpp.s
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_epoll.cpp.s
 .PHONY : base_epoll.cpp.s
 
 base_socket_server.o: base_socket_server.cpp.o
@@ -185,7 +185,7 @@ base_socket_server.o: base_socket_server.cpp.o
 
 # target to build an object file
 base_socket_server.cpp.o:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_socket_server.cpp.o
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_socket_server.cpp.o
 .PHONY : base_socket_server.cpp.o
 
 base_socket_server.i: base_socket_server.cpp.i
@@ -194,7 +194,7 @@ base_socket_server.i: base_socket_server.cpp.i
 
 # target to preprocess a source file
 base_socket_server.cpp.i:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_socket_server.cpp.i
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_socket_server.cpp.i
 .PHONY : base_socket_server.cpp.i
 
 base_socket_server.s: base_socket_server.cpp.s
@@ -203,7 +203,7 @@ base_socket_server.s: base_socket_server.cpp.s
 
 # target to generate assembly for a file
 base_socket_server.cpp.s:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_socket_server.cpp.s
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_socket_server.cpp.s
 .PHONY : base_socket_server.cpp.s
 
 base_stream.o: base_stream.cpp.o
@@ -212,7 +212,7 @@ base_stream.o: base_stream.cpp.o
 
 # target to build an object file
 base_stream.cpp.o:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_stream.cpp.o
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_stream.cpp.o
 .PHONY : base_stream.cpp.o
 
 base_stream.i: base_stream.cpp.i
@@ -221,7 +221,7 @@ base_stream.i: base_stream.cpp.i
 
 # target to preprocess a source file
 base_stream.cpp.i:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_stream.cpp.i
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_stream.cpp.i
 .PHONY : base_stream.cpp.i
 
 base_stream.s: base_stream.cpp.s
@@ -230,7 +230,7 @@ base_stream.s: base_stream.cpp.s
 
 # target to generate assembly for a file
 base_stream.cpp.s:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_stream.cpp.s
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_stream.cpp.s
 .PHONY : base_stream.cpp.s
 
 base_thread.o: base_thread.cpp.o
@@ -239,7 +239,7 @@ base_thread.o: base_thread.cpp.o
 
 # target to build an object file
 base_thread.cpp.o:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_thread.cpp.o
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_thread.cpp.o
 .PHONY : base_thread.cpp.o
 
 base_thread.i: base_thread.cpp.i
@@ -248,7 +248,7 @@ base_thread.i: base_thread.cpp.i
 
 # target to preprocess a source file
 base_thread.cpp.i:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_thread.cpp.i
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_thread.cpp.i
 .PHONY : base_thread.cpp.i
 
 base_thread.s: base_thread.cpp.s
@@ -257,7 +257,7 @@ base_thread.s: base_thread.cpp.s
 
 # target to generate assembly for a file
 base_thread.cpp.s:
-	cd /home/game/server/mycode/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_thread.cpp.s
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_thread.cpp.s
 .PHONY : base_thread.cpp.s
 
 # Help Target
@@ -295,6 +295,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/game/server/mycode/hwtrunk/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/game/server/hwtrunk/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

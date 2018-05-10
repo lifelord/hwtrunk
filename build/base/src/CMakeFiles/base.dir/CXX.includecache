@@ -74,23 +74,23 @@ unistd.h
 pthread.h
 -
 
-/home/game/server/mycode/hwtrunk/base/src/base_client_pool.cpp
+/home/game/server/hwtrunk/base/src/base_client_pool.cpp
 base_client_pool.h
-/home/game/server/mycode/hwtrunk/base/src/base_client_pool.h
+/home/game/server/hwtrunk/base/src/base_client_pool.h
 
-/home/game/server/mycode/hwtrunk/base/src/base_epoll.cpp
+/home/game/server/hwtrunk/base/src/base_epoll.cpp
 base_epoll.h
-/home/game/server/mycode/hwtrunk/base/src/base_epoll.h
+/home/game/server/hwtrunk/base/src/base_epoll.h
 
-/home/game/server/mycode/hwtrunk/base/src/base_socket_server.cpp
+/home/game/server/hwtrunk/base/src/base_socket_server.cpp
 base_socket_server.h
-/home/game/server/mycode/hwtrunk/base/src/base_socket_server.h
+/home/game/server/hwtrunk/base/src/base_socket_server.h
 
-/home/game/server/mycode/hwtrunk/base/src/base_stream.cpp
+/home/game/server/hwtrunk/base/src/base_stream.cpp
 base_stream.h
-/home/game/server/mycode/hwtrunk/base/src/base_stream.h
+/home/game/server/hwtrunk/base/src/base_stream.h
 
-/home/game/server/mycode/hwtrunk/base/src/base_thread.cpp
+/home/game/server/hwtrunk/base/src/base_thread.cpp
 base_thread.h
-/home/game/server/mycode/hwtrunk/base/src/base_thread.h
+/home/game/server/hwtrunk/base/src/base_thread.h
 

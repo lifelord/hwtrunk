@@ -1,12 +1,6 @@
 #!/bin/bash
-if  test "build";then
-	cd build
-	cmake ..
-	make
-else
-	mkdir build
-	cd build
-	cmake ..
-	make
-	
-fi
+rm -rf build
+mkdir build
+cd build
+cmake ..
+make

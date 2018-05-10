@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/game/server/mycode/hwtrunk
+CMAKE_SOURCE_DIR = /home/game/server/hwtrunk
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/game/server/mycode/hwtrunk/build
+CMAKE_BINARY_DIR = /home/game/server/hwtrunk/build
 
 # Include any dependencies generated for this target.
 include base/src/CMakeFiles/base.dir/depend.make
@@ -59,16 +59,16 @@ include base/src/CMakeFiles/base.dir/flags.make
 
 base/src/CMakeFiles/base.dir/base_client_pool.cpp.o: base/src/CMakeFiles/base.dir/flags.make
 base/src/CMakeFiles/base.dir/base_client_pool.cpp.o: ../base/src/base_client_pool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/mycode/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object base/src/CMakeFiles/base.dir/base_client_pool.cpp.o"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_client_pool.cpp.o -c /home/game/server/mycode/hwtrunk/base/src/base_client_pool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object base/src/CMakeFiles/base.dir/base_client_pool.cpp.o"
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_client_pool.cpp.o -c /home/game/server/hwtrunk/base/src/base_client_pool.cpp
 
 base/src/CMakeFiles/base.dir/base_client_pool.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base.dir/base_client_pool.cpp.i"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/mycode/hwtrunk/base/src/base_client_pool.cpp > CMakeFiles/base.dir/base_client_pool.cpp.i
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/hwtrunk/base/src/base_client_pool.cpp > CMakeFiles/base.dir/base_client_pool.cpp.i
 
 base/src/CMakeFiles/base.dir/base_client_pool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base.dir/base_client_pool.cpp.s"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/mycode/hwtrunk/base/src/base_client_pool.cpp -o CMakeFiles/base.dir/base_client_pool.cpp.s
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/hwtrunk/base/src/base_client_pool.cpp -o CMakeFiles/base.dir/base_client_pool.cpp.s
 
 base/src/CMakeFiles/base.dir/base_client_pool.cpp.o.requires:
 
@@ -83,16 +83,16 @@ base/src/CMakeFiles/base.dir/base_client_pool.cpp.o.provides.build: base/src/CMa
 
 base/src/CMakeFiles/base.dir/base_epoll.cpp.o: base/src/CMakeFiles/base.dir/flags.make
 base/src/CMakeFiles/base.dir/base_epoll.cpp.o: ../base/src/base_epoll.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/mycode/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object base/src/CMakeFiles/base.dir/base_epoll.cpp.o"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_epoll.cpp.o -c /home/game/server/mycode/hwtrunk/base/src/base_epoll.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object base/src/CMakeFiles/base.dir/base_epoll.cpp.o"
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_epoll.cpp.o -c /home/game/server/hwtrunk/base/src/base_epoll.cpp
 
 base/src/CMakeFiles/base.dir/base_epoll.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base.dir/base_epoll.cpp.i"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/mycode/hwtrunk/base/src/base_epoll.cpp > CMakeFiles/base.dir/base_epoll.cpp.i
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/hwtrunk/base/src/base_epoll.cpp > CMakeFiles/base.dir/base_epoll.cpp.i
 
 base/src/CMakeFiles/base.dir/base_epoll.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base.dir/base_epoll.cpp.s"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/mycode/hwtrunk/base/src/base_epoll.cpp -o CMakeFiles/base.dir/base_epoll.cpp.s
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/hwtrunk/base/src/base_epoll.cpp -o CMakeFiles/base.dir/base_epoll.cpp.s
 
 base/src/CMakeFiles/base.dir/base_epoll.cpp.o.requires:
 
@@ -107,16 +107,16 @@ base/src/CMakeFiles/base.dir/base_epoll.cpp.o.provides.build: base/src/CMakeFile
 
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: base/src/CMakeFiles/base.dir/flags.make
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/src/base_socket_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/mycode/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object base/src/CMakeFiles/base.dir/base_socket_server.cpp.o"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_socket_server.cpp.o -c /home/game/server/mycode/hwtrunk/base/src/base_socket_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object base/src/CMakeFiles/base.dir/base_socket_server.cpp.o"
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_socket_server.cpp.o -c /home/game/server/hwtrunk/base/src/base_socket_server.cpp
 
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base.dir/base_socket_server.cpp.i"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/mycode/hwtrunk/base/src/base_socket_server.cpp > CMakeFiles/base.dir/base_socket_server.cpp.i
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/hwtrunk/base/src/base_socket_server.cpp > CMakeFiles/base.dir/base_socket_server.cpp.i
 
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base.dir/base_socket_server.cpp.s"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/mycode/hwtrunk/base/src/base_socket_server.cpp -o CMakeFiles/base.dir/base_socket_server.cpp.s
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/hwtrunk/base/src/base_socket_server.cpp -o CMakeFiles/base.dir/base_socket_server.cpp.s
 
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o.requires:
 
@@ -131,16 +131,16 @@ base/src/CMakeFiles/base.dir/base_socket_server.cpp.o.provides.build: base/src/C
 
 base/src/CMakeFiles/base.dir/base_stream.cpp.o: base/src/CMakeFiles/base.dir/flags.make
 base/src/CMakeFiles/base.dir/base_stream.cpp.o: ../base/src/base_stream.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/mycode/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object base/src/CMakeFiles/base.dir/base_stream.cpp.o"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_stream.cpp.o -c /home/game/server/mycode/hwtrunk/base/src/base_stream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object base/src/CMakeFiles/base.dir/base_stream.cpp.o"
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_stream.cpp.o -c /home/game/server/hwtrunk/base/src/base_stream.cpp
 
 base/src/CMakeFiles/base.dir/base_stream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base.dir/base_stream.cpp.i"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/mycode/hwtrunk/base/src/base_stream.cpp > CMakeFiles/base.dir/base_stream.cpp.i
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/hwtrunk/base/src/base_stream.cpp > CMakeFiles/base.dir/base_stream.cpp.i
 
 base/src/CMakeFiles/base.dir/base_stream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base.dir/base_stream.cpp.s"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/mycode/hwtrunk/base/src/base_stream.cpp -o CMakeFiles/base.dir/base_stream.cpp.s
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/hwtrunk/base/src/base_stream.cpp -o CMakeFiles/base.dir/base_stream.cpp.s
 
 base/src/CMakeFiles/base.dir/base_stream.cpp.o.requires:
 
@@ -155,16 +155,16 @@ base/src/CMakeFiles/base.dir/base_stream.cpp.o.provides.build: base/src/CMakeFil
 
 base/src/CMakeFiles/base.dir/base_thread.cpp.o: base/src/CMakeFiles/base.dir/flags.make
 base/src/CMakeFiles/base.dir/base_thread.cpp.o: ../base/src/base_thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/mycode/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object base/src/CMakeFiles/base.dir/base_thread.cpp.o"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_thread.cpp.o -c /home/game/server/mycode/hwtrunk/base/src/base_thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object base/src/CMakeFiles/base.dir/base_thread.cpp.o"
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/base_thread.cpp.o -c /home/game/server/hwtrunk/base/src/base_thread.cpp
 
 base/src/CMakeFiles/base.dir/base_thread.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base.dir/base_thread.cpp.i"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/mycode/hwtrunk/base/src/base_thread.cpp > CMakeFiles/base.dir/base_thread.cpp.i
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/game/server/hwtrunk/base/src/base_thread.cpp > CMakeFiles/base.dir/base_thread.cpp.i
 
 base/src/CMakeFiles/base.dir/base_thread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base.dir/base_thread.cpp.s"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/mycode/hwtrunk/base/src/base_thread.cpp -o CMakeFiles/base.dir/base_thread.cpp.s
+	cd /home/game/server/hwtrunk/build/base/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/game/server/hwtrunk/base/src/base_thread.cpp -o CMakeFiles/base.dir/base_thread.cpp.s
 
 base/src/CMakeFiles/base.dir/base_thread.cpp.o.requires:
 
@@ -195,9 +195,9 @@ base_EXTERNAL_OBJECTS =
 ../lib/libbase.a: base/src/CMakeFiles/base.dir/base_thread.cpp.o
 ../lib/libbase.a: base/src/CMakeFiles/base.dir/build.make
 ../lib/libbase.a: base/src/CMakeFiles/base.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/game/server/mycode/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library ../../../lib/libbase.a"
-	cd /home/game/server/mycode/hwtrunk/build/base/src && $(CMAKE_COMMAND) -P CMakeFiles/base.dir/cmake_clean_target.cmake
-	cd /home/game/server/mycode/hwtrunk/build/base/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/base.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library ../../../lib/libbase.a"
+	cd /home/game/server/hwtrunk/build/base/src && $(CMAKE_COMMAND) -P CMakeFiles/base.dir/cmake_clean_target.cmake
+	cd /home/game/server/hwtrunk/build/base/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/base.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 base/src/CMakeFiles/base.dir/build: ../lib/libbase.a
@@ -213,10 +213,10 @@ base/src/CMakeFiles/base.dir/requires: base/src/CMakeFiles/base.dir/base_thread.
 .PHONY : base/src/CMakeFiles/base.dir/requires
 
 base/src/CMakeFiles/base.dir/clean:
-	cd /home/game/server/mycode/hwtrunk/build/base/src && $(CMAKE_COMMAND) -P CMakeFiles/base.dir/cmake_clean.cmake
+	cd /home/game/server/hwtrunk/build/base/src && $(CMAKE_COMMAND) -P CMakeFiles/base.dir/cmake_clean.cmake
 .PHONY : base/src/CMakeFiles/base.dir/clean
 
 base/src/CMakeFiles/base.dir/depend:
-	cd /home/game/server/mycode/hwtrunk/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/game/server/mycode/hwtrunk /home/game/server/mycode/hwtrunk/base/src /home/game/server/mycode/hwtrunk/build /home/game/server/mycode/hwtrunk/build/base/src /home/game/server/mycode/hwtrunk/build/base/src/CMakeFiles/base.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/game/server/hwtrunk/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/game/server/hwtrunk /home/game/server/hwtrunk/base/src /home/game/server/hwtrunk/build /home/game/server/hwtrunk/build/base/src /home/game/server/hwtrunk/build/base/src/CMakeFiles/base.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : base/src/CMakeFiles/base.dir/depend
 
