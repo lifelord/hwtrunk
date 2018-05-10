@@ -1,0 +1,1 @@
+/usr/bin/c++  -O0 -g  -rdynamic CMakeFiles/game1.dir/main.cpp.o  -o ../../../bin/game1 -lpthread ../../../lib/libbase.a 

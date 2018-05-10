@@ -1,0 +1,1 @@
+/usr/bin/c++  -O0 -g  -rdynamic CMakeFiles/client.dir/main.cpp.o  -o ../../../bin/client -lpthread ../../../lib/libbase.a 
