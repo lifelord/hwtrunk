@@ -22,10 +22,10 @@ public:
 		AutoLock safe(&m_lock);
 		m_queue.pop_front();
 	}
-	T* Front()
+	T& Front()
 	{	
 		AutoLock safe(&m_lock);
-		return &(*m_queue.begin());
+		return (*m_queue.begin());
 	}
 private:
 	BaseLock m_lock;

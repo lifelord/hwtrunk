@@ -52,8 +52,9 @@ int UnPackHandler::Run()
 
             if (pUser->ReadData()) 
                 continue;
-
-            pUser->OnClose();
+            //解包出错,应该关闭socket,这里需要思考如何优雅的移除解包类,释放玩家对象,结束socket,将socket从epoll中移除
+            //关闭该socket的引用会触发epoll_out事件
+            close(pUser->GetSockfd());
         }
 	}
 	cout << "UnPackHandler End" << endl;
@@ -94,10 +95,10 @@ void UnPackHandler::recv_handler(uint32 fd,void* buff,uint32 nlen)
 
 			m_MsgCount[fd]++;
 
-			cout << "recv_handler:" << fd << "," << m_MsgCount[fd] << endl;
+			cout << "recv_handler fd,msgcount=:" << fd << "," << m_MsgCount[fd] << endl;
 		}else
 		{
-			cout << "fd=" << fd << ",UnPack not exist" << endl; 
+			cout << "recv_handler fd=" << fd << ",UnPack not exist" << endl; 
 		}	
 	}
 	//m_sem.ReleaseSema();
@@ -119,6 +120,8 @@ void UnPackHandler::close_handler(uint32 fd)
 			SAFE_DEL_POINT(pUnPack->pUser);
 
 			SAFE_DEL_POINT(pUnPack);
+
+			cout << "close_handler fd =" << fd << endl;
 		}
 	}
 }

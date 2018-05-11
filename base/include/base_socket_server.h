@@ -11,10 +11,23 @@
 //用队列去存待发送的消息
 class CSocketServer:public BaseThread
 {
-	struct writebuffer
+	class writebuffer
 	{
-		uint32 fd;
-		CStream buff;
+	public:
+		writebuffer(int32 nFd,void* pBuff,uint32 nLen)
+		{
+			fd = nFd;
+			len = nLen;
+			buff = new char[nLen];
+			memmove(buff,pBuff,nLen);
+		}
+		~writebuffer()
+		{
+			SAFE_DEL_POINT(buff);
+		}
+		int32 fd;
+		char* buff;
+		uint32 len;
 	};
 public:
 	CSocketServer();
@@ -28,14 +41,14 @@ public:
 	bool DoRead(Event& ev);
 	bool DoWrite(Event& ev);
 public:
+	//队列版本
 	uint32 Send(uint32 fd,void* buff, uint32 nLen);
 private:
 	CEpoll m_epoll;
-	uint32 m_listenfd;
+	int32 m_listenfd;
 	bool m_Et;			//是否边缘模式
 	BaseHandler* m_pHandler;
-
-	map<uint32, writebuffer*> m_writebuffer;
+	BaseQueue<writebuffer*> m_pQueue;
 };
 
 #endif

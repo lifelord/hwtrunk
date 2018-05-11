@@ -55,6 +55,9 @@ bool BaseUser::push_data(CStream& data)
 		cout << "BaseUser::push_data:m_size=" << m_size << endl;
 		return false;
 	}
+
+	cout << "BaseUser:push_data,step1" << endl;
+
 	uint32 nLen = data.position();
 
 	if ((m_size + nLen) > GATE_BUFF_SIZE)
@@ -70,6 +73,7 @@ bool BaseUser::push_data(CStream& data)
 		memmove(m_data, &data[0], nLen);
 		m_size += nLen;
 	}
+
 	data.erase();
 
 	return true;
@@ -79,9 +83,11 @@ bool BaseUser::ReadData()
 {
 	if (m_size == 0)
 	{
-		cout << "BaseUser::ReadData:m_size=" << m_size << endl;
+		cout << "BaseUser::ReadData1:m_size=" << m_size << endl;
 		return false;
 	}
+
+	cout << "BaseUser:ReadData,step2" << endl;
 
 	char* pBuffer = m_data;
 	uint32 nLastLen = m_size;
@@ -90,25 +96,31 @@ bool BaseUser::ReadData()
 	{
 		if (nLastLen < sizeof(MsgHead))
 		{
-			cout << "ReadData,nLastLen=" << nLastLen << ",sizeof(MsgHead)=" << sizeof(MsgHead);
+			//cout << "BaseUser:ReadData,nLastLen=" << nLastLen << ",sizeof(MsgHead)=" << sizeof(MsgHead) << endl;
 			break;
 		}
 		MsgHead* pHead = (MsgHead*)pBuffer;
 
-		if (pHead->pack_start != PACKET_START)
-		{
-			cout << "ReadData,pHead->pack_start=" << pHead->pack_start << ",PACKET_START=" << PACKET_START << endl;
-			break;
-		}
+		//包长不够
 		if (nLastLen < pHead->pack_len)
 		{
-			cout << "ReadData,nLastLen=" << nLastLen << ",pHead->pack_len=" << pHead->pack_len;
+			//cout << "BaseUser:ReadData,nLastLen=" << nLastLen << ",pHead->pack_len=" << pHead->pack_len;
 			break;
 		}
+
+		if (pHead->pack_start != PACKET_START)
+		{
+			//cout << "BaseUser:ReadData,pHead->pack_start=" << pHead->pack_start << ",PACKET_START=" << PACKET_START << endl;
+			//包头开始符出错应该直接返回false
+			//break;
+			return false;
+		}
+
 		uint32 pack_len = pHead->pack_len;
 
 		if (!OnRecv(pBuffer, pack_len))
 		{
+			//解包出错一定返回false
 			return false;
 		}
 		nLastLen -= pack_len;
@@ -119,6 +131,7 @@ bool BaseUser::ReadData()
 	{
 		memmove(m_data, pBuffer, nLastLen);
 		m_size = nLastLen;
+		cout << "BaseUser:ReadData2:m_size =" << m_size << endl;
 	}
 	return true;
 }

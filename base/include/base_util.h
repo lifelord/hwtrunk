@@ -26,7 +26,8 @@ typedef unsigned int uint32;
 typedef int 		int32;
 typedef int 		sint32;
 typedef uint16_t    uint16;
+typedef int 		SOCKET;
 
-#define SAFE_DEL_POINT(p){delete(p);p=NULL;}
+#define SAFE_DEL_POINT(p){delete p;p=NULL;}
 
 #endif
