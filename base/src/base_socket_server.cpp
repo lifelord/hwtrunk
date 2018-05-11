@@ -12,9 +12,10 @@ bool CSocketServer::DoError(Event& ev)
 {
 	if(ev.error)
 	{
+		uint32 fd = *(uint32*)ev.ud;
 		cout << "DoError" << endl;
-		m_epoll.Efd_del(ev.fd);
-		close(ev.fd);
+		m_epoll.Efd_del(fd);
+		close(fd);
 		return true;
 	}
 	return false;
@@ -25,11 +26,12 @@ bool CSocketServer::DoRead(Event& ev)
 	//处理读事件
 	if(ev.read)
 	{
+		uint32 fd = *(uint32*)ev.ud;
 		//1、接收新socket
-		if (ev.fd == m_listenfd)
+		if (fd == m_listenfd)
 		{
 			//accept a new socket
-			uint32 newfd = accept(ev.fd,NULL,NULL);
+			uint32 newfd = accept(fd,NULL,NULL);
 
 			m_epoll.Efd_add(newfd,&newfd,m_Et);
 
@@ -40,6 +42,15 @@ bool CSocketServer::DoRead(Event& ev)
 
 			cout << "DoRead:accept" << endl;
 
+			if(m_writebuffer.find(newfd) != m_writebuffer.end())
+			{
+				writebuffer* pBuffer = new writebuffer;
+
+				pBuffer->fd = newfd;
+
+				m_writebuffer.insert(make_pair(newfd,pBuffer));
+			}
+
 			return true;
 		}else
 		{
@@ -47,13 +58,12 @@ bool CSocketServer::DoRead(Event& ev)
 			{
 				static char buff[1024];
 
-				int32 nSize = recv(ev.fd, buff, sizeof(buff), MSG_DONTWAIT);
+				int32 nSize = recv(fd, buff, sizeof(buff), MSG_DONTWAIT);
 
 				if( nSize > 0)
 				{
-					cout << "DoRead:recv=" << buff <<"," << nSize << endl;
 					//接收数据
-					m_pHandler->recv_handler(ev.fd,buff,nSize);
+					m_pHandler->recv_handler(fd,buff,nSize);
 				}else if (nSize <= 0)
 				{
 					//1、recv返回0有两种情况,一种是请求接收的字节只有0了(这里显示不是),一种是对端socket close或shutdown了,
@@ -62,11 +72,11 @@ bool CSocketServer::DoRead(Event& ev)
 					{
 						cout << "DoRead:close" << endl;
 						//关闭
-						m_epoll.Efd_del(ev.fd);
+						m_epoll.Efd_del(fd);
 
-						close(ev.fd);
+						close(fd);
 
-						m_pHandler->close_handler(ev.fd);
+						m_pHandler->close_handler(fd);
 
 						return true;
 					}else
@@ -90,8 +100,27 @@ bool CSocketServer::DoWrite(Event& ev)
 
 		for(;;)
 		{
+			uint32 fd = *(uint32*)ev.ud;
+
 			//处理写事件
-			m_pHandler->write_handler(ev.fd);
+			map<uint32, writebuffer*>::iterator itr = m_writebuffer.find(fd);
+
+			if(itr != m_writebuffer.end())
+			{
+				CStream& sBuff = itr->second->buff;
+
+				uint32 nSize = send(fd,&sBuff[0],sBuff.length(),0);
+
+				if(nSize > 0)
+				{
+					sBuff.position(nSize);
+					sBuff.erase();
+				}else
+				{
+					sBuff.clear();
+					break;
+				}
+			}
 
 			//非Et模式只执行一次
 			if(!m_Et){break;}
@@ -145,4 +174,43 @@ void CSocketServer::Init(uint16 nIP,uint16 nPort,BaseHandler* pHandler,bool et)
 	cout << "m_listenfd = " << m_listenfd << ",ip=" << nIP << endl;
 
 	m_epoll.Efd_add(m_listenfd,&m_listenfd,m_Et);
+}
+
+//有无方法实现不加锁的发送?????思考队列方式
+uint32 CSocketServer::Send(uint32 fd,void* buff, uint32 nLen)
+{
+	//把消息丢到队列里面，主动触发epoll_out去处理发送数据
+	map<uint32, writebuffer*>::iterator itr = m_writebuffer.find(fd);
+
+	uint32 nSize = 0;
+
+	if(itr != m_writebuffer.end())
+	{
+		CStream& sbuff = itr->second->buff;
+
+		sbuff.write(buff,nLen);
+
+		nSize = send(fd, buff, nLen, 0);
+	
+		if(nSize > 0)
+		{
+			uint32 nDiff = nSize - nLen;
+
+			//not all send
+			if(nDiff>0)
+			{
+				sbuff.position(nLen);
+
+				sbuff.erase();
+
+				m_epoll.Efd_write(fd, &fd, true);
+			}
+		}else if (errno == EAGAIN)
+		{
+			m_epoll.Efd_write(fd, &fd, true);
+
+			return 0;
+		}
+	}
+	return nSize;
 }

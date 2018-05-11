@@ -7,7 +7,7 @@
 
 struct Event
 {
-	uint32 fd;
+	void* ud;
 	bool read;
 	bool write;
 	bool error;
@@ -28,7 +28,7 @@ public:
 	//删除fd
 	bool Efd_del(uint32 fd);
 	//epoll写事件,fd为待监视的句柄,ud为用户数据
-	bool Efd_write(uint32 fd,void* ud,bool enable);
+	bool Efd_write(uint32 fd, void* ud, bool enable);
 	//epoll wait
 	uint32 Efd_wait(struct Event* e,uint32 max);
 	//set fd nonblocking

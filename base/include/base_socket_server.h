@@ -8,8 +8,14 @@
 #include"base_lock.h"
 #include"base_queue.h"
 
+//用队列去存待发送的消息
 class CSocketServer:public BaseThread
 {
+	struct writebuffer
+	{
+		uint32 fd;
+		CStream buff;
+	};
 public:
 	CSocketServer();
 	~CSocketServer();
@@ -21,11 +27,15 @@ public:
 	bool DoError(Event& ev);
 	bool DoRead(Event& ev);
 	bool DoWrite(Event& ev);
+public:
+	uint32 Send(uint32 fd,void* buff, uint32 nLen);
 private:
 	CEpoll m_epoll;
 	uint32 m_listenfd;
 	bool m_Et;			//是否边缘模式
 	BaseHandler* m_pHandler;
+
+	map<uint32, writebuffer*> m_writebuffer;
 };
 
 #endif

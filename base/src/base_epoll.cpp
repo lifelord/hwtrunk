@@ -89,7 +89,7 @@ uint32 CEpoll::Efd_wait(struct Event* e,uint32 max)
 	uint32 n = epoll_wait(m_efd,ev,max,-1);
 	for(uint32 i=0;i<n;++i)
 	{
-		e[i].fd = *(uint32*)ev[i].data.ptr;//fd
+		e[i].ud = ev[i].data.ptr;
 
 		unsigned flag = ev[i].events;//event
 

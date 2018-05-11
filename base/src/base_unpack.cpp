@@ -45,8 +45,6 @@ int UnPackHandler::Run()
 			m_MsgCount.clear();
 		}
 
-		cout << vUserVec.size() << endl;
-
  		//解包数据时不需要锁
 		for (uint32 i = 0; i < vUserVec.size(); ++i)
         {
@@ -127,7 +125,4 @@ void UnPackHandler::close_handler(uint32 fd)
 
 void UnPackHandler::write_handler(uint32 fd)
 {
-	//这里还有点问题
-	//int32 size = send(fd, &pData->wbuffer[0], pData->wbuffer.length(), MSG_DONTWAIT );//发送之
-	cout << "write_handler" << endl;
 }
