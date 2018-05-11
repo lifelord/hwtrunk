@@ -47,6 +47,12 @@ base_queue.h
 ../base/include/base_queue.h
 
 ../base/include/base_stream.h
+vector
+-
+string
+-
+deque
+-
 base_util.h
 ../base/include/base_util.h
 
@@ -65,6 +71,8 @@ base_client_pool.h
 ../base/include/base_client_pool.h
 base_lock.h
 ../base/include/base_lock.h
+base_stream.h
+../base/include/base_stream.h
 
 ../base/include/base_util.h
 iostream
@@ -80,6 +88,8 @@ pthread.h
 semaphore.h
 -
 string.h
+-
+sys/time.h
 -
 sys/socket.h
 -

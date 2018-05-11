@@ -55,6 +55,20 @@ inline Svr_Head* CltHeadToSrvHead(char* pPack)
 	return pSvrHead;
 };
 
+//新的消息包结构
+struct MsgHead
+{
+	uint32 pack_start;	//开始符,验证用的
+	uint32 pack_type;	//消息类型
+	uint32 pack_len;	//消息长度
+	uint32 pack_cmd;	//消息指令
+
+	MsgHead()
+	{
+		memset(this,0,sizeof(MsgHead));
+	}
+};
+
 #pragma pack()
 
 #endif

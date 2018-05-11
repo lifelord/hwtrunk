@@ -17,9 +17,10 @@ public:
 	int Run();
 public:
 	void Init(uint16 nIP,uint16 nPort,BaseHandler* pHandler,bool et = false);
-	void DoError(Event& ev);
-	void DoRead(Event& ev);
-	void DoWrite(Event& ev);
+	//返回true,代表事件处理完毕可以跳到下个循环
+	bool DoError(Event& ev);
+	bool DoRead(Event& ev);
+	bool DoWrite(Event& ev);
 private:
 	CEpoll m_epoll;
 	uint32 m_listenfd;

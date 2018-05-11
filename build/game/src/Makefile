@@ -111,19 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-game/src/CMakeFiles/game1.dir/rule:
-	cd /home/game/server/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 game/src/CMakeFiles/game1.dir/rule
-.PHONY : game/src/CMakeFiles/game1.dir/rule
+game/src/CMakeFiles/game.dir/rule:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 game/src/CMakeFiles/game.dir/rule
+.PHONY : game/src/CMakeFiles/game.dir/rule
 
 # Convenience name for target.
-game1: game/src/CMakeFiles/game1.dir/rule
+game: game/src/CMakeFiles/game.dir/rule
 
-.PHONY : game1
+.PHONY : game
 
 # fast build rule for target.
-game1/fast:
-	cd /home/game/server/hwtrunk/build && $(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/build
-.PHONY : game1/fast
+game/fast:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f game/src/CMakeFiles/game.dir/build.make game/src/CMakeFiles/game.dir/build
+.PHONY : game/fast
 
 main.o: main.cpp.o
 
@@ -131,7 +131,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/game/server/hwtrunk/build && $(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/main.cpp.o
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f game/src/CMakeFiles/game.dir/build.make game/src/CMakeFiles/game.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -140,7 +140,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/game/server/hwtrunk/build && $(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/main.cpp.i
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f game/src/CMakeFiles/game.dir/build.make game/src/CMakeFiles/game.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +149,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/game/server/hwtrunk/build && $(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/main.cpp.s
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f game/src/CMakeFiles/game.dir/build.make game/src/CMakeFiles/game.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -160,7 +160,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... game1"
+	@echo "... game"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

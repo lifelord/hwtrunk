@@ -54,4 +54,71 @@ private:
 	BaseLock* m_pLock;
 };
 
+class BaseSema : public BaseLock
+{
+	BaseSema(const BaseSema &rhs);
+	BaseSema& operator=(const BaseSema &rhs);
+
+public:
+	inline BaseSema(){};
+	inline virtual ~BaseSema(){ CloseSema(); };
+
+	int WaitSema(unsigned long nTime = INFINITE)
+	{
+		int nResult = sem_wait(&m_Semaphore);
+		if (nResult == -1) nResult = (errno == EINTR) ? 0x00 : -1;
+
+        //////////////////////////////////////////////////////////////////////////
+        //留着
+        /*timeval tv = {0};
+        timespec ts = {0};
+
+        gettimeofday(&tv, NULL);
+        tv.tv_usec += milli_secs * 1000;
+        if ( tv.tv_usec >= 1000000 )
+        {
+            tv.tv_sec += tv.tv_usec / 1000000;
+            tv.tv_usec %= 1000000;
+        }
+        ts.tv_sec = tv.tv_sec;
+        ts.tv_nsec = tv.tv_usec * 1000;
+
+        while (true)
+        {
+            if (0== sem_timedwait(semaphore,&ts))
+                return 1;
+
+            switch(errno)
+            {
+            case ETIMEDOUT:
+                return 0;
+            case EINTR:
+                continue;
+            default:
+                return -1;
+            }
+        }*/
+		return nResult;
+	}
+	//发出几次信号
+	inline int ReleaseSema(int nCount = 1)
+	{
+		int i = nCount;
+		while (i-- > 0x00) sem_post(&m_Semaphore);
+		return nCount;
+	}
+
+	inline int CreateSema()
+	{
+		int nResult = sem_init(&m_Semaphore, 0, 0);
+		if (nResult == -1) return 0x00;
+		return 0x01;
+	}
+
+	inline void CloseSema(){ sem_destroy(&m_Semaphore); }
+
+protected:
+	sem_t m_Semaphore;
+};
+
 #endif

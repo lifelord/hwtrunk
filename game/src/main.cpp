@@ -8,7 +8,11 @@ int main()
 
 	g_SocketServer.Init(INADDR_ANY,8001,&g_UnpackHandler);
 
+	g_UnpackHandler.Start();
+
 	g_SocketServer.Start();
+
+	g_UnpackHandler.Stop();
 
 	g_SocketServer.Stop();
 

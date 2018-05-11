@@ -15,7 +15,7 @@ public:
 	virtual void OnReset(){};
 	bool push_data(CStream& data);
 	bool push_data(void* buff,uint32 nLen);
-	bool read();
+	bool ReadData();
 public:
 	uint32& GetSockfd() { return m_Sockfd; }
 	uint32& GetRoleId() { return m_RoleId; }

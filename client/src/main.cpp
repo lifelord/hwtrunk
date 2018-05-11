@@ -39,17 +39,24 @@ int main(int argc, char *argv[])
         printf("%s\n", strerror(errno));  
         exit(1);  
     }
-    char buff[26] = {"hello,epoll"};
-    send(client_fd,buff,sizeof(buff),0);
 
-    char buff1[26] = {0};
-    recv(client_fd,buff1,sizeof(buff1),0);
-    cout << buff1 << endl;  
-    //close(client_fd);
+    //测试代码，发argv[2]个包，看解析是否正确
+    uint32 num = atoi(argv[2]);
+    cout << num;
+
+    for(uint32 i = 0;i<num;++i)
+    {
+        CStream stream;
+        MsgHead*& pHead = stream.NewHead<MsgHead>();
+        pHead->pack_start = PACKET_START;
+        pHead->pack_type = 1;
+        pHead->pack_len = sizeof(MsgHead);
+        pHead->pack_cmd = i;
+        send(client_fd,&stream[0],stream.length(),0);
+    }
 
     for(;;)
     {
-
     }
 
     return 0;

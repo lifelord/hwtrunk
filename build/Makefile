@@ -124,17 +124,17 @@ base/fast:
 .PHONY : base/fast
 
 #=============================================================================
-# Target rules for targets named game1
+# Target rules for targets named game
 
 # Build rule for target.
-game1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 game1
-.PHONY : game1
+game: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 game
+.PHONY : game
 
 # fast build rule for target.
-game1/fast:
-	$(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/build
-.PHONY : game1/fast
+game/fast:
+	$(MAKE) -f game/src/CMakeFiles/game.dir/build.make game/src/CMakeFiles/game.dir/build
+.PHONY : game/fast
 
 #=============================================================================
 # Target rules for targets named client
@@ -158,7 +158,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... base"
-	@echo "... game1"
+	@echo "... game"
 	@echo "... client"
 .PHONY : help
 

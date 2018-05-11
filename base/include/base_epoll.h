@@ -44,7 +44,7 @@ public:
 	BaseHandler(){}
 	virtual ~BaseHandler(){}
 public:
-	virtual void accept_handler(uint32 fd) = 0;
+	virtual void accept_handler(uint32 fd,uint32 nhost) = 0;
 	virtual void recv_handler(uint32 fd,void* buff,uint32 nlen) = 0;
 	virtual void close_handler(uint32 fd) = 0;
 	virtual void write_handler(uint32 fd) = 0;

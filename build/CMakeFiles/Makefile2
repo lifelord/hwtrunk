@@ -118,12 +118,12 @@ clean: base/src/CMakeFiles/base.dir/clean
 # Directory level rules for directory game/src
 
 # Convenience name for "all" pass in the directory.
-game/src/all: game/src/CMakeFiles/game1.dir/all
+game/src/all: game/src/CMakeFiles/game.dir/all
 
 .PHONY : game/src/all
 
 # Convenience name for "clean" pass in the directory.
-game/src/clean: game/src/CMakeFiles/game1.dir/clean
+game/src/clean: game/src/CMakeFiles/game.dir/clean
 
 .PHONY : game/src/clean
 
@@ -133,39 +133,39 @@ game/src/preinstall:
 .PHONY : game/src/preinstall
 
 #=============================================================================
-# Target rules for target game/src/CMakeFiles/game1.dir
+# Target rules for target game/src/CMakeFiles/game.dir
 
 # All Build rule for target.
-game/src/CMakeFiles/game1.dir/all:
-	$(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/depend
-	$(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=10,11 "Built target game1"
-.PHONY : game/src/CMakeFiles/game1.dir/all
+game/src/CMakeFiles/game.dir/all:
+	$(MAKE) -f game/src/CMakeFiles/game.dir/build.make game/src/CMakeFiles/game.dir/depend
+	$(MAKE) -f game/src/CMakeFiles/game.dir/build.make game/src/CMakeFiles/game.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=10,11 "Built target game"
+.PHONY : game/src/CMakeFiles/game.dir/all
 
 # Include target in all.
-all: game/src/CMakeFiles/game1.dir/all
+all: game/src/CMakeFiles/game.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-game/src/CMakeFiles/game1.dir/rule: cmake_check_build_system
+game/src/CMakeFiles/game.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 game/src/CMakeFiles/game1.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 game/src/CMakeFiles/game.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/game/server/hwtrunk/build/CMakeFiles 0
-.PHONY : game/src/CMakeFiles/game1.dir/rule
+.PHONY : game/src/CMakeFiles/game.dir/rule
 
 # Convenience name for target.
-game1: game/src/CMakeFiles/game1.dir/rule
+game: game/src/CMakeFiles/game.dir/rule
 
-.PHONY : game1
-
-# clean rule for target.
-game/src/CMakeFiles/game1.dir/clean:
-	$(MAKE) -f game/src/CMakeFiles/game1.dir/build.make game/src/CMakeFiles/game1.dir/clean
-.PHONY : game/src/CMakeFiles/game1.dir/clean
+.PHONY : game
 
 # clean rule for target.
-clean: game/src/CMakeFiles/game1.dir/clean
+game/src/CMakeFiles/game.dir/clean:
+	$(MAKE) -f game/src/CMakeFiles/game.dir/build.make game/src/CMakeFiles/game.dir/clean
+.PHONY : game/src/CMakeFiles/game.dir/clean
+
+# clean rule for target.
+clean: game/src/CMakeFiles/game.dir/clean
 
 .PHONY : clean
 

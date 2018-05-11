@@ -8,16 +8,19 @@ CSocketServer::~CSocketServer()
 {
 }
 
-void CSocketServer::DoError(Event& ev)
+bool CSocketServer::DoError(Event& ev)
 {
 	if(ev.error)
 	{
+		cout << "DoError" << endl;
 		m_epoll.Efd_del(ev.fd);
 		close(ev.fd);
+		return true;
 	}
+	return false;
 }
 
-void CSocketServer::DoRead(Event& ev)
+bool CSocketServer::DoRead(Event& ev)
 {
 	//处理读事件
 	if(ev.read)
@@ -28,18 +31,16 @@ void CSocketServer::DoRead(Event& ev)
 			//accept a new socket
 			uint32 newfd = accept(ev.fd,NULL,NULL);
 
-			Event newEvt;
-
-			newEvt.fd = newfd;
-
 			m_epoll.Efd_add(newfd,&newfd,m_Et);
 
 			cout << "accept:" << newfd << endl;
 
 			//新连接
-			m_pHandler->accept_handler(newfd);
+			m_pHandler->accept_handler(newfd,0);
 
-			return;
+			cout << "DoRead:accept" << endl;
+
+			return true;
 		}else
 		{
 			for(;;)
@@ -50,41 +51,42 @@ void CSocketServer::DoRead(Event& ev)
 
 				if( nSize > 0)
 				{
+					cout << "DoRead:recv=" << buff <<"," << nSize << endl;
 					//接收数据
 					m_pHandler->recv_handler(ev.fd,buff,nSize);
-
-					cout << "recv:" << buff << ",nSize=" << nSize <<endl;
-
 				}else if (nSize <= 0)
 				{
 					//1、recv返回0有两种情况,一种是请求接收的字节只有0了(这里显示不是),一种是对端socket close或shutdown了,
 					//2、小于0是错误,EAGAIN错误不处理,其他错误关闭连接
 					if (errno != EAGAIN || nSize == 0)
 					{
+						cout << "DoRead:close" << endl;
 						//关闭
+						m_epoll.Efd_del(ev.fd);
+
+						close(ev.fd);
+
 						m_pHandler->close_handler(ev.fd);
 
-						return;
+						return true;
 					}else
 					{
 						break;
 					}
 				}
 				//非Et模式只执行一次
-				if (!m_Et)
-				{
-					break;
-				}
+				if (!m_Et){break;}
 			}	
 		}
 	}
+	return true;
 }
 
-void CSocketServer::DoWrite(Event& ev)
+bool CSocketServer::DoWrite(Event& ev)
 {
 	if(ev.write)
 	{
-		cout << "write" << endl;
+		cout << "DoWrite" << endl;
 
 		for(;;)
 		{
@@ -92,17 +94,15 @@ void CSocketServer::DoWrite(Event& ev)
 			m_pHandler->write_handler(ev.fd);
 
 			//非Et模式只执行一次
-			if(!m_Et)
-			{
-				break;
-			}
+			if(!m_Et){break;}
 		}
 	}
+	return true;
 }
 
 int CSocketServer::Run()
 {
-	cout << "RunStart-CSocketServer" << endl;
+	cout << "CSocketServer Start" << endl;
 
 	while(GetbActive())
 	{
@@ -110,20 +110,16 @@ int CSocketServer::Run()
 
 		uint32 n = m_epoll.Efd_wait(ev,256);
 
-		cout << "event num="<< n << endl;
-
 		for(uint32 i = 0;i<n;++i)
 		{
-			cout << ev[i].fd << ":" << ev[i].error << ":" << ev[i].read << ":" << ev[i].write << endl;
+			if( DoError(ev[i]) ){break;}
 
-			DoError(ev[i]);
+			if( DoRead(ev[i]) ){break;}
 
-			DoRead(ev[i]);
-
-			DoWrite(ev[i]);
+			if( DoWrite(ev[i]) ){break;}
 		}
 	}
-	cout << "RunEnd-CSocketServer" << endl;
+	cout << "CSocketServer End" << endl;
 	return 0;
 }
 

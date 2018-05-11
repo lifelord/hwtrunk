@@ -12,9 +12,15 @@ BaseUser::~BaseUser()
 	
 }
 
+//暂时这样写的,接客户端的包
 bool BaseUser::OnRecv(char* pData,uint32 sz)
 {
+	MsgHead* pHead = (MsgHead*)pData;
+
+	cout << "BaseUser::OnRecv:Packet=(pHead = " << pHead->pack_start << ",pack_type = " << pHead->pack_type 
+		<< ",pack_len = " << pHead->pack_len << ",pack_cmd = " << pHead->pack_cmd <<")"<< endl;
 	
+    return true;
 }
 
 bool BaseUser::push_data(void* buff,uint32 nLen)
@@ -35,6 +41,8 @@ bool BaseUser::push_data(void* buff,uint32 nLen)
 	else
 	{
 		memmove(m_data, buff, nLen);
+
+		m_size += nLen;
 	}
 	return true;
 }
@@ -44,6 +52,7 @@ bool BaseUser::push_data(CStream& data)
 	if (data.length() == 0)
 	{
 		m_size = 0;
+		cout << "BaseUser::push_data:m_size=" << m_size << endl;
 		return false;
 	}
 	uint32 nLen = data.position();
@@ -59,38 +68,44 @@ bool BaseUser::push_data(CStream& data)
 	else
 	{
 		memmove(m_data, &data[0], nLen);
+		m_size += nLen;
 	}
 	data.erase();
 
 	return true;
 }
 
-bool BaseUser::read()
+bool BaseUser::ReadData()
 {
 	if (m_size == 0)
 	{
+		cout << "BaseUser::ReadData:m_size=" << m_size << endl;
 		return false;
 	}
+
 	char* pBuffer = m_data;
 	uint32 nLastLen = m_size;
 
 	for (;;)
 	{
-		if (nLastLen < sizeof(Clt_Head))
+		if (nLastLen < sizeof(MsgHead))
 		{
+			cout << "ReadData,nLastLen=" << nLastLen << ",sizeof(MsgHead)=" << sizeof(MsgHead);
 			break;
 		}
-		Clt_Head* pCltHead = (Clt_Head*)pBuffer;
+		MsgHead* pHead = (MsgHead*)pBuffer;
 
-		if (pCltHead->pack_start != PACKET_START)
+		if (pHead->pack_start != PACKET_START)
 		{
+			cout << "ReadData,pHead->pack_start=" << pHead->pack_start << ",PACKET_START=" << PACKET_START << endl;
 			break;
 		}
-		if (nLastLen < pCltHead->pack_len)
+		if (nLastLen < pHead->pack_len)
 		{
+			cout << "ReadData,nLastLen=" << nLastLen << ",pHead->pack_len=" << pHead->pack_len;
 			break;
 		}
-		uint32 pack_len = pCltHead->pack_len;
+		uint32 pack_len = pHead->pack_len;
 
 		if (!OnRecv(pBuffer, pack_len))
 		{
