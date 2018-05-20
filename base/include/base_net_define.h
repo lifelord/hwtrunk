@@ -18,6 +18,11 @@
 
 #define GATE_BUFF_SIZE 0x08000//32K
 
+#define UNPACK_BUFF_SIZE 0x08000//32K,解包缓存大小
+
+#define QSOCK_LISTEN 1
+#define QSOCK_ACCEPT 2
+
 #pragma pack(1)
 struct Clt_Head
 {
@@ -55,7 +60,7 @@ inline Svr_Head* CltHeadToSrvHead(char* pPack)
 	return pSvrHead;
 };
 
-//新的消息包结构
+//新消息包结构
 struct MsgHead
 {
 	uint32 pack_start;	//开始符,验证用的

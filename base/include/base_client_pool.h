@@ -12,12 +12,11 @@ public:
 	virtual ~BaseUser();
 	virtual bool OnRecv(char* pData,uint32 sz);
 	virtual void OnClose(){};
-	virtual void OnReset(){};
+	virtual void OnReset();
 	bool push_data(CStream& data);
-	bool push_data(void* buff,uint32 nLen);
 	bool ReadData();
 public:
-	uint32& GetSockfd() { return m_Sockfd; }
+	int32& GetSockfd() { return m_Sockfd; }
 	uint32& GetRoleId() { return m_RoleId; }
 	uint32& GetHost() { return m_Host; }
 	uint32& GetIndex() { return m_Index; }
@@ -26,7 +25,7 @@ private:
 	char* m_data;
 	uint32 m_size;
 private:
-	uint32 m_Sockfd;
+	int32 m_Sockfd;
 	uint32 m_RoleId;
 	uint32 m_Host;
 	uint32 m_Index;

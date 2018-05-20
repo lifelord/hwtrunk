@@ -137,6 +137,19 @@ game/fast:
 .PHONY : game/fast
 
 #=============================================================================
+# Target rules for targets named multiclient
+
+# Build rule for target.
+multiclient: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 multiclient
+.PHONY : multiclient
+
+# fast build rule for target.
+multiclient/fast:
+	$(MAKE) -f client/src/CMakeFiles/multiclient.dir/build.make client/src/CMakeFiles/multiclient.dir/build
+.PHONY : multiclient/fast
+
+#=============================================================================
 # Target rules for targets named client
 
 # Build rule for target.
@@ -159,6 +172,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... base"
 	@echo "... game"
+	@echo "... multiclient"
 	@echo "... client"
 .PHONY : help
 

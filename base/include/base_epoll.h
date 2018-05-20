@@ -33,7 +33,7 @@ public:
 	//epoll wait
 	uint32 Efd_wait(struct Event* e,uint32 max);
 	//set fd nonblocking
-	void Efd_nonblocking(int fd); 
+	void Efd_nonblocking(int32 fd); 
 private:
 	//监听句柄
 	uint32 m_efd;
@@ -45,10 +45,10 @@ public:
 	BaseHandler(){}
 	virtual ~BaseHandler(){}
 public:
-	virtual void accept_handler(uint32 fd,uint32 nhost) = 0;
-	virtual void recv_handler(uint32 fd,void* buff,uint32 nlen) = 0;
-	virtual void close_handler(uint32 fd) = 0;
-	virtual void write_handler(uint32 fd) = 0;
+	virtual void accept_handler(int32 fd,uint32 nhost) = 0;
+	virtual void recv_handler(int32 fd,void* buff,uint32 nlen) = 0;
+	virtual void close_handler(int32 fd) = 0;
+	virtual void write_handler(int32 fd) = 0;
 };
 
 #endif

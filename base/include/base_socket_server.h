@@ -29,26 +29,50 @@ class CSocketServer:public BaseThread
 		char* buff;
 		uint32 len;
 	};
+
+	struct QSocket
+	{
+		int32 fd;
+		uint8 type;
+		BaseHandler* m_pHandler;
+
+		QSocket()
+		{
+			memset(this,0,sizeof(this));
+		}
+	};
 public:
 	CSocketServer();
 	~CSocketServer();
 
 	int Run();
 public:
+	void RegListenSocket(uint16 nIP,uint16 nPort,BaseHandler* pHandler);
+
+	void RegAcceptSocket(uint32 fd,BaseHandler* pHandler);
+
 	void Init(uint16 nIP,uint16 nPort,BaseHandler* pHandler,bool et = false);
 	//返回true,代表事件处理完毕可以跳到下个循环
 	bool DoError(Event& ev);
 	bool DoRead(Event& ev);
 	bool DoWrite(Event& ev);
+
+	//新版DoRead(Event& ev);
+	bool DoReadEx(Event& ev);
+
+	bool& GetEdge(){return m_Et;}
 public:
 	//队列版本
-	uint32 Send(uint32 fd,void* buff, uint32 nLen);
+	uint32 Send(int32 fd,void* buff, uint32 nLen);
 private:
 	CEpoll m_epoll;
-	int32 m_listenfd;
-	bool m_Et;			//是否边缘模式
+	int32 m_listenfd;	//这里应该有个socket池,通过处理消息来注册其中的socket
 	BaseHandler* m_pHandler;
-	BaseQueue<writebuffer*> m_pQueue;
+
+	map<uint32,QSocket*> m_Pool;
+	bool m_Et;			//是否边缘模式
+	
+	BaseQueue<writebuffer*> m_pQueue; 
 };
 
 #endif

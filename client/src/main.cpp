@@ -7,6 +7,7 @@ void usage(char *name)
     printf("usage: %s IP\n", name);  
 }
 
+//单个客户端
 int main(int argc, char *argv[])
 {	
 	int server_fd, client_fd, length = 0;  
@@ -55,9 +56,7 @@ int main(int argc, char *argv[])
         send(client_fd,&stream[0],stream.length(),0);
     }
 
-    for(;;)
-    {
-    }
+    for(;;){}
 
     return 0;
 }

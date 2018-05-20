@@ -11,6 +11,10 @@ base/src/CMakeFiles/base.dir/base_epoll.cpp.o
  ../base/include/base_epoll.h
  ../base/include/base_util.h
  /home/game/server/hwtrunk/base/src/base_epoll.cpp
+base/src/CMakeFiles/base.dir/base_socket.cpp.o
+ ../base/include/base_socket.h
+ ../base/include/base_util.h
+ /home/game/server/hwtrunk/base/src/base_socket.cpp
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o
  ../base/include/base_client_pool.h
  ../base/include/base_epoll.h

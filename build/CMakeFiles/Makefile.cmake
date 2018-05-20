@@ -56,5 +56,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "base/src/CMakeFiles/base.dir/DependInfo.cmake"
   "game/src/CMakeFiles/game.dir/DependInfo.cmake"
+  "client/src/CMakeFiles/multiclient.dir/DependInfo.cmake"
   "client/src/CMakeFiles/client.dir/DependInfo.cmake"
   )

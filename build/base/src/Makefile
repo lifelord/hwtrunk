@@ -179,6 +179,33 @@ base_epoll.cpp.s:
 	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_epoll.cpp.s
 .PHONY : base_epoll.cpp.s
 
+base_socket.o: base_socket.cpp.o
+
+.PHONY : base_socket.o
+
+# target to build an object file
+base_socket.cpp.o:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_socket.cpp.o
+.PHONY : base_socket.cpp.o
+
+base_socket.i: base_socket.cpp.i
+
+.PHONY : base_socket.i
+
+# target to preprocess a source file
+base_socket.cpp.i:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_socket.cpp.i
+.PHONY : base_socket.cpp.i
+
+base_socket.s: base_socket.cpp.s
+
+.PHONY : base_socket.s
+
+# target to generate assembly for a file
+base_socket.cpp.s:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_socket.cpp.s
+.PHONY : base_socket.cpp.s
+
 base_socket_server.o: base_socket_server.cpp.o
 
 .PHONY : base_socket_server.o
@@ -302,6 +329,9 @@ help:
 	@echo "... base_epoll.o"
 	@echo "... base_epoll.i"
 	@echo "... base_epoll.s"
+	@echo "... base_socket.o"
+	@echo "... base_socket.i"
+	@echo "... base_socket.s"
 	@echo "... base_socket_server.o"
 	@echo "... base_socket_server.i"
 	@echo "... base_socket_server.s"

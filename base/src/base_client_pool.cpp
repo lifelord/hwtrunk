@@ -2,14 +2,20 @@
 
 BaseUser::BaseUser()
 {
-	m_buff = new char[PCK_OFFSET + GATE_BUFF_SIZE];
-	m_data = &m_buff[0] + PCK_OFFSET;
+	//将数据放置到m_buff中,供解包用
+	m_buff = new char[UNPACK_BUFF_SIZE];
+	m_data = &m_buff[0] ;
 	m_size = 0;
 }
 
 BaseUser::~BaseUser()
 {
 	
+}
+
+void BaseUser::OnReset()
+{
+	m_size = 0;
 }
 
 //暂时这样写的,接客户端的包
@@ -21,30 +27,6 @@ bool BaseUser::OnRecv(char* pData,uint32 sz)
 		<< ",pack_len = " << pHead->pack_len << ",pack_cmd = " << pHead->pack_cmd <<")"<< endl;
 	
     return true;
-}
-
-bool BaseUser::push_data(void* buff,uint32 nLen)
-{
-	if(nLen == 0)
-	{
-		m_size = 0;
-		return false;
-	}
-	if ((m_size + nLen) > GATE_BUFF_SIZE)
-	{
-		uint32 pos = GATE_BUFF_SIZE - m_size;
-
-		memmove(m_data, buff, pos);
-
-		m_size += pos;
-	}
-	else
-	{
-		memmove(m_data, buff, nLen);
-
-		m_size += nLen;
-	}
-	return true;
 }
 
 bool BaseUser::push_data(CStream& data)
@@ -60,9 +42,9 @@ bool BaseUser::push_data(CStream& data)
 
 	uint32 nLen = data.position();
 
-	if ((m_size + nLen) > GATE_BUFF_SIZE)
+	if ((m_size + nLen) > UNPACK_BUFF_SIZE)
 	{
-		uint32 pos = GATE_BUFF_SIZE - m_size;
+		uint32 pos = UNPACK_BUFF_SIZE - m_size;
 
 		memmove(m_data, &data[0], pos);
 		m_size += pos;

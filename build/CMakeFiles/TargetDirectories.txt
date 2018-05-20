@@ -7,5 +7,6 @@
 /home/game/server/hwtrunk/build/game/src/CMakeFiles/edit_cache.dir
 /home/game/server/hwtrunk/build/game/src/CMakeFiles/game.dir
 /home/game/server/hwtrunk/build/client/src/CMakeFiles/rebuild_cache.dir
+/home/game/server/hwtrunk/build/client/src/CMakeFiles/multiclient.dir
 /home/game/server/hwtrunk/build/client/src/CMakeFiles/edit_cache.dir
 /home/game/server/hwtrunk/build/client/src/CMakeFiles/client.dir

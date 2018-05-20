@@ -1,0 +1,1 @@
+/usr/bin/c++  -O0 -g  -rdynamic CMakeFiles/multiclient.dir/multimain.cpp.o  -o ../../../bin/multiclient -lpthread ../../../lib/libbase.a 

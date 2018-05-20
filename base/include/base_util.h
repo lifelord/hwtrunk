@@ -8,18 +8,27 @@
 #include<pthread.h>
 #include<semaphore.h>
 #include<string.h>
+
+#include<stdio.h>
+#include<netdb.h>//hostent
+#include<stdint.h>
+#include<fcntl.h>
 #include<sys/time.h>
+#include<sys/types.h>
 #include<sys/socket.h>
+#include<netinet/in.h>
 #include<sys/epoll.h>
 #include<netinet/in.h>
 #include<arpa/inet.h>
-#include<fcntl.h>
 #include<unistd.h>
 #include<pthread.h>
 
 using namespace::std;
 
 #define INFINITE	-1
+#define SOCKET_ERROR -1
+#define INVALID_SOCKET -1
+#define SleepTime(_millsec_)		usleep( _millsec_ * 1000 )
 
 typedef unsigned char uint8;
 typedef unsigned int uint32;

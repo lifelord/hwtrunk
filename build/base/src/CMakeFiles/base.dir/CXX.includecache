@@ -32,6 +32,10 @@ base_util.h
 base_lock.h
 ../base/include/base_lock.h
 
+../base/include/base_socket.h
+base_util.h
+../base/include/base_util.h
+
 ../base/include/base_socket_server.h
 base_util.h
 ../base/include/base_util.h
@@ -89,17 +93,27 @@ semaphore.h
 -
 string.h
 -
+stdio.h
+-
+netdb.h
+-
+stdint.h
+-
+fcntl.h
+-
 sys/time.h
 -
+sys/types.h
+-
 sys/socket.h
+-
+netinet/in.h
 -
 sys/epoll.h
 -
 netinet/in.h
 -
 arpa/inet.h
--
-fcntl.h
 -
 unistd.h
 -
@@ -113,6 +127,10 @@ base_client_pool.h
 /home/game/server/hwtrunk/base/src/base_epoll.cpp
 base_epoll.h
 /home/game/server/hwtrunk/base/src/base_epoll.h
+
+/home/game/server/hwtrunk/base/src/base_socket.cpp
+base_socket.h
+/home/game/server/hwtrunk/base/src/base_socket.h
 
 /home/game/server/hwtrunk/base/src/base_socket_server.cpp
 base_socket_server.h

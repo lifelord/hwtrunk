@@ -11,6 +11,10 @@ base/src/CMakeFiles/base.dir/base_epoll.cpp.o: ../base/include/base_epoll.h
 base/src/CMakeFiles/base.dir/base_epoll.cpp.o: ../base/include/base_util.h
 base/src/CMakeFiles/base.dir/base_epoll.cpp.o: ../base/src/base_epoll.cpp
 
+base/src/CMakeFiles/base.dir/base_socket.cpp.o: ../base/include/base_socket.h
+base/src/CMakeFiles/base.dir/base_socket.cpp.o: ../base/include/base_util.h
+base/src/CMakeFiles/base.dir/base_socket.cpp.o: ../base/src/base_socket.cpp
+
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_client_pool.h
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_epoll.h
 base/src/CMakeFiles/base.dir/base_socket_server.cpp.o: ../base/include/base_lock.h

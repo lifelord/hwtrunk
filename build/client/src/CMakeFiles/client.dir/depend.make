@@ -7,6 +7,7 @@ client/src/CMakeFiles/client.dir/main.cpp.o: ../base/include/base_include.h
 client/src/CMakeFiles/client.dir/main.cpp.o: ../base/include/base_lock.h
 client/src/CMakeFiles/client.dir/main.cpp.o: ../base/include/base_net_define.h
 client/src/CMakeFiles/client.dir/main.cpp.o: ../base/include/base_queue.h
+client/src/CMakeFiles/client.dir/main.cpp.o: ../base/include/base_socket.h
 client/src/CMakeFiles/client.dir/main.cpp.o: ../base/include/base_socket_server.h
 client/src/CMakeFiles/client.dir/main.cpp.o: ../base/include/base_stream.h
 client/src/CMakeFiles/client.dir/main.cpp.o: ../base/include/base_thread.h

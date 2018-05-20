@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+client/src/CMakeFiles/multiclient.dir/rule:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 client/src/CMakeFiles/multiclient.dir/rule
+.PHONY : client/src/CMakeFiles/multiclient.dir/rule
+
+# Convenience name for target.
+multiclient: client/src/CMakeFiles/multiclient.dir/rule
+
+.PHONY : multiclient
+
+# fast build rule for target.
+multiclient/fast:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f client/src/CMakeFiles/multiclient.dir/build.make client/src/CMakeFiles/multiclient.dir/build
+.PHONY : multiclient/fast
+
+# Convenience name for target.
 client/src/CMakeFiles/client.dir/rule:
 	cd /home/game/server/hwtrunk/build && $(MAKE) -f CMakeFiles/Makefile2 client/src/CMakeFiles/client.dir/rule
 .PHONY : client/src/CMakeFiles/client.dir/rule
@@ -152,6 +167,33 @@ main.cpp.s:
 	cd /home/game/server/hwtrunk/build && $(MAKE) -f client/src/CMakeFiles/client.dir/build.make client/src/CMakeFiles/client.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+multimain.o: multimain.cpp.o
+
+.PHONY : multimain.o
+
+# target to build an object file
+multimain.cpp.o:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f client/src/CMakeFiles/multiclient.dir/build.make client/src/CMakeFiles/multiclient.dir/multimain.cpp.o
+.PHONY : multimain.cpp.o
+
+multimain.i: multimain.cpp.i
+
+.PHONY : multimain.i
+
+# target to preprocess a source file
+multimain.cpp.i:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f client/src/CMakeFiles/multiclient.dir/build.make client/src/CMakeFiles/multiclient.dir/multimain.cpp.i
+.PHONY : multimain.cpp.i
+
+multimain.s: multimain.cpp.s
+
+.PHONY : multimain.s
+
+# target to generate assembly for a file
+multimain.cpp.s:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f client/src/CMakeFiles/multiclient.dir/build.make client/src/CMakeFiles/multiclient.dir/multimain.cpp.s
+.PHONY : multimain.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,11 +201,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... multiclient"
 	@echo "... edit_cache"
 	@echo "... client"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... multimain.o"
+	@echo "... multimain.i"
+	@echo "... multimain.s"
 .PHONY : help
 
 

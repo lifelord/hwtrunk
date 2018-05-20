@@ -23,10 +23,10 @@ public:
 
 	int Run();
 public:
-	virtual void accept_handler(uint32 fd,uint32 nhost);
-	virtual void recv_handler(uint32 fd,void* buff,uint32 nlen);
-	virtual void close_handler(uint32 fd);
-	virtual void write_handler(uint32 fd);
+	virtual void accept_handler(int32 fd,uint32 nhost);
+	virtual void recv_handler(int32 fd,void* buff,uint32 nlen);
+	virtual void close_handler(int32 fd);
+	virtual void write_handler(int32 fd);
 private:
 	map<uint32,UnPack*> m_Pool;
 	BaseLock m_lock;

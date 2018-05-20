@@ -21,6 +21,79 @@ bool CSocketServer::DoError(Event& ev)
 	return false;
 }
 
+bool CSocketServer::DoReadEx(Event& ev)
+{
+	if(ev.read)
+	{
+		map<uint32,QSocket*>::iterator itor = m_Pool.find(ev.fd);
+		if(itor != m_Pool.end())
+		{
+			QSocket* pSocket = itor->second;
+			if( NULL != pSocket )
+			{
+				switch(pSocket->type)
+				{
+					case QSOCK_LISTEN:
+					{
+						uint32 newfd = accept(ev.fd,NULL,NULL);
+
+						RegAcceptSocket(newfd,pSocket->m_pHandler);
+
+						pSocket->m_pHandler->accept_handler(newfd,0);
+
+						cout << "DoRead:accept fd:" << newfd << endl;
+					}break;
+					case QSOCK_ACCEPT:
+					{
+						for(;;)
+						{
+							static char buff[1024];
+
+							int32 nSize = recv(ev.fd, buff, sizeof(buff), MSG_DONTWAIT);
+
+							if( nSize > 0)
+							{
+								//接收数据
+								pSocket->m_pHandler->recv_handler(ev.fd,buff,nSize);
+
+							}else if (nSize <= 0)
+							{
+								//1、recv返回0有两种情况,一种是请求接收的字节只有0了(这里显示不是),一种是对端socket close或shutdown了,
+								//2、小于0是错误,EAGAIN错误不处理,其他错误关闭连接
+								if (errno != EAGAIN || nSize == 0)
+								{
+									cout << "DoRead:close fd:" << ev.fd << endl;
+									//关闭
+									m_epoll.Efd_del(ev.fd);
+
+									close(ev.fd);
+
+									m_pHandler->close_handler(ev.fd);
+
+									return true;
+								}else
+								{
+									break;
+								}
+							}
+							//for test
+							 
+							//char buff2[26] = {"hello,client!"};
+
+							//Send(ev.fd,buff2,sizeof(buff2));
+
+							//非Et模式只执行一次
+							if (!m_Et){break;}
+						}
+					}break;
+					default:
+						break;
+				} 
+			}
+		}
+	}
+}
+
 bool CSocketServer::DoRead(Event& ev)
 {
 	//处理读事件
@@ -124,6 +197,44 @@ bool CSocketServer::DoWrite(Event& ev)
 	return false;
 }
 
+void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort,BaseHandler* pHandler)
+{
+	sockaddr_in _sockaddr_in;
+    _sockaddr_in.sin_family = AF_INET;
+    _sockaddr_in.sin_addr.s_addr = nIP;
+    _sockaddr_in.sin_port = htons(nPort);
+
+	int32 listenfd = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+
+	int32 nret = bind(listenfd,(struct sockaddr*)&_sockaddr_in,sizeof(_sockaddr_in));
+
+	listen(listenfd,10);
+
+	cout << "listenfd = " << listenfd << ",ip=" << nIP << endl;
+
+	m_epoll.Efd_add(listenfd,NULL,m_Et);
+
+	//暂时不做重复检测,以后用对象池替换
+	QSocket* pSocket = new QSocket;
+	pSocket->fd = listenfd;
+	pSocket->type = QSOCK_LISTEN;
+	pSocket->m_pHandler = pHandler;
+
+	m_Pool.insert(make_pair(listenfd,pSocket));
+}
+
+void CSocketServer::RegAcceptSocket(uint32 fd,BaseHandler* pHandler)
+{
+	QSocket* pSocket = new QSocket;
+	pSocket->fd = fd;
+	pSocket->type = QSOCK_ACCEPT;
+	pSocket->m_pHandler = pHandler;
+
+	m_Pool.insert(make_pair(fd,pSocket));
+
+	m_epoll.Efd_add(fd,NULL,m_Et);
+}
+
 int CSocketServer::Run()
 {
 	cout << "CSocketServer Start" << endl;
@@ -133,7 +244,6 @@ int CSocketServer::Run()
 		struct Event ev[256];
 
 		uint32 n = m_epoll.Efd_wait(ev,256);
-
 
 		for(uint32 i = 0;i<n;++i)
 		{
@@ -175,7 +285,7 @@ void CSocketServer::Init(uint16 nIP,uint16 nPort,BaseHandler* pHandler,bool et)
 }
 
 //队列版本
-uint32 CSocketServer::Send(uint32 fd,void* buff, uint32 nLen)
+uint32 CSocketServer::Send(int32 fd,void* buff, uint32 nLen)
 {
 	//内存碎片问题,可能得用内存池
 	writebuffer* pBuffer = new writebuffer(fd,buff,nLen);

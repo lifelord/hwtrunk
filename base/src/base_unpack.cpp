@@ -54,14 +54,22 @@ int UnPackHandler::Run()
                 continue;
             //解包出错,应该关闭socket,这里需要思考如何优雅的移除解包类,释放玩家对象,结束socket,将socket从epoll中移除
             //关闭该socket的引用会触发epoll_out事件
+            cout << "pUser->ReadData() = false,socketid =" << pUser->GetSockfd() << endl;
+
+            //暂时这样处理吧
+           	pUser->OnReset();
+
+            //直接关掉导致不触发epoll事件
             close(pUser->GetSockfd());
+
+            close_handler(pUser->GetSockfd());
         }
 	}
 	cout << "UnPackHandler End" << endl;
 	return 0;
 }
 
-void UnPackHandler::accept_handler(uint32 fd,uint32 nhost)
+void UnPackHandler::accept_handler(int32 fd,uint32 nhost)
 {
 	{
 		AutoLock safe(&m_lock);
@@ -78,7 +86,7 @@ void UnPackHandler::accept_handler(uint32 fd,uint32 nhost)
 	}
 }
 
-void UnPackHandler::recv_handler(uint32 fd,void* buff,uint32 nlen)
+void UnPackHandler::recv_handler(int32 fd,void* buff,uint32 nlen)
 {
 	{
 		AutoLock safe(&m_lock);
@@ -104,7 +112,7 @@ void UnPackHandler::recv_handler(uint32 fd,void* buff,uint32 nlen)
 	//m_sem.ReleaseSema();
 }
 
-void UnPackHandler::close_handler(uint32 fd)
+void UnPackHandler::close_handler(int32 fd)
 {
 	{
 		AutoLock safe(&m_lock);
@@ -126,6 +134,6 @@ void UnPackHandler::close_handler(uint32 fd)
 	}
 }
 
-void UnPackHandler::write_handler(uint32 fd)
+void UnPackHandler::write_handler(int32 fd)
 {
 }
