@@ -23,7 +23,7 @@ public:
 
 	int Run();
 public:
-	virtual void accept_handler(int32 fd,uint32 nhost);
+	virtual void accept_handler(int32 fd,uint32 nhost,uint8 servertype);
 	virtual void recv_handler(int32 fd,void* buff,uint32 nlen);
 	virtual void close_handler(int32 fd);
 	virtual void write_handler(int32 fd);

@@ -34,7 +34,7 @@ class CSocketServer:public BaseThread
 	{
 		int32 fd;
 		uint8 type;
-
+		uint8 servertype;
 		QSocket()
 		{
 			memset(this,0,sizeof(this));
@@ -46,7 +46,7 @@ public:
 
 	int Run();
 public:
-	void RegListenSocket(uint16 nIP,uint16 nPort);
+	void RegListenSocket(uint16 nIP,uint16 nPort,uint8 servertype);
 
 	void RegAcceptSocket(int32 fd);
 
@@ -57,9 +57,6 @@ public:
 	bool DoError(Event& ev);
 	bool DoRead(Event& ev);
 	bool DoWrite(Event& ev);
-
-	//新版DoRead(Event& ev);
-	bool DoReadEx(Event& ev);
 
 	bool& GetEdge(){return m_Et;}
 public:

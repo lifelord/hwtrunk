@@ -23,6 +23,10 @@
 #define QSOCK_LISTEN 1
 #define QSOCK_ACCEPT 2
 
+#define QSERVER_TYPE_DEFAULT 0
+#define QSERVER_TYPE_NORMAL	1
+#define QSERVER_TYPE_WEB 2
+
 #pragma pack(1)
 struct Clt_Head
 {

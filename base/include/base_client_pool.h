@@ -20,6 +20,7 @@ public:
 	uint32& GetRoleId() { return m_RoleId; }
 	uint32& GetHost() { return m_Host; }
 	uint32& GetIndex() { return m_Index; }
+	uint32& GetServerType(){ return m_servertype;}
 private:
 	char* m_buff;
 	char* m_data;
@@ -29,6 +30,7 @@ private:
 	uint32 m_RoleId;
 	uint32 m_Host;
 	uint32 m_Index;
+	uint32 m_servertype;	//根据服务器定解包类型
 };
 
 #endif

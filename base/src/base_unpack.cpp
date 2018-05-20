@@ -69,7 +69,8 @@ int UnPackHandler::Run()
 	return 0;
 }
 
-void UnPackHandler::accept_handler(int32 fd,uint32 nhost)
+//根据servertype给与不同的解包策略
+void UnPackHandler::accept_handler(int32 fd,uint32 nhost,uint8 servertype)
 {
 	{
 		AutoLock safe(&m_lock);
@@ -77,6 +78,8 @@ void UnPackHandler::accept_handler(int32 fd,uint32 nhost)
 		UnPack* pUnPack = new UnPack;
 
 		pUnPack->pUser = new BaseUser;
+
+		pUnPack->pUser->GetServerType() = servertype;
 
 		pUnPack->pUser->GetSockfd() = fd;
 
@@ -103,7 +106,7 @@ void UnPackHandler::recv_handler(int32 fd,void* buff,uint32 nlen)
 
 			m_MsgCount[fd]++;
 
-			cout << "recv_handler fd,msgcount=:" << fd << "," << m_MsgCount[fd] << endl;
+			cout << "recv_handler fd,recv cnt=:" << fd << "," << m_MsgCount[fd] << endl;
 		}else
 		{
 			cout << "recv_handler fd=" << fd << ",UnPack not exist" << endl; 

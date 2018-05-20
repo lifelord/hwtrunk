@@ -9,10 +9,10 @@ int main()
 	g_SocketServer.Init(&g_UnpackHandler);
 
 	//client server port:8001
-	g_SocketServer.RegListenSocket(INADDR_ANY,8001);
+	g_SocketServer.RegListenSocket(INADDR_ANY,8001,QSERVER_TYPE_NORMAL);
 
 	//web server port:8002
-	g_SocketServer.RegListenSocket(INADDR_ANY,8002);
+	g_SocketServer.RegListenSocket(INADDR_ANY,8002,QSERVER_TYPE_WEB);
 
 	g_UnpackHandler.Start();
 

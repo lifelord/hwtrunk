@@ -19,7 +19,7 @@ bool CSocketServer::DoError(Event& ev)
 	return false;
 }
 
-bool CSocketServer::DoReadEx(Event& ev)
+bool CSocketServer::DoRead(Event& ev)
 {
 	if(ev.read)
 	{
@@ -37,7 +37,7 @@ bool CSocketServer::DoReadEx(Event& ev)
 
 						RegAcceptSocket(newfd);
 
-						m_pHandler->accept_handler(newfd,0);
+						m_pHandler->accept_handler(newfd,0,pSocket->servertype);
 					}break;
 					case QSOCK_ACCEPT:
 					{
@@ -84,64 +84,6 @@ bool CSocketServer::DoReadEx(Event& ev)
 	}
 }
 
-bool CSocketServer::DoRead(Event& ev)
-{
-	//处理读事件
-	if(ev.read)
-	{
-		//1、接收新socket
-		if (ev.fd == m_listenfd)
-		{
-			//accept a new socket
-			uint32 newfd = accept(ev.fd,NULL,NULL);
-
-			m_epoll.Efd_add(newfd,NULL,m_Et);
-			//新连接
-			m_pHandler->accept_handler(newfd,0);
-
-			cout << "DoRead:accept fd:" << newfd << endl;
-
-			return true;
-		}else
-		{
-			for(;;)
-			{
-				static char buff[1024];
-
-				int32 nSize = recv(ev.fd, buff, sizeof(buff), MSG_DONTWAIT);
-
-				if( nSize > 0)
-				{
-					//接收数据
-					m_pHandler->recv_handler(ev.fd,buff,nSize);
-				}else if (nSize <= 0)
-				{
-					//1、recv返回0有两种情况,一种是请求接收的字节只有0了(这里显示不是),一种是对端socket close或shutdown了,
-					//2、小于0是错误,EAGAIN错误不处理,其他错误关闭连接
-					if (errno != EAGAIN || nSize == 0)
-					{
-						cout << "DoRead:close fd:" << ev.fd << endl;
-						//关闭
-						m_epoll.Efd_del(ev.fd);
-
-						close(ev.fd);
-
-						m_pHandler->close_handler(ev.fd);
-
-						return true;
-					}else
-					{
-						break;
-					}
-				}
-				//非Et模式只执行一次
-				if (!m_Et){break;}
-			}
-		}
-	}
-	return false;
-}
-
 bool CSocketServer::DoWrite(Event& ev)
 {
 	if(ev.write)
@@ -181,7 +123,7 @@ bool CSocketServer::DoWrite(Event& ev)
 	return false;
 }
 
-void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort)
+void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort,uint8 servertype)
 {
 	sockaddr_in _sockaddr_in;
     _sockaddr_in.sin_family = AF_INET;
@@ -202,6 +144,7 @@ void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort)
 	QSocket* pSocket = new QSocket;
 	pSocket->fd = listenfd;
 	pSocket->type = QSOCK_LISTEN;
+	pSocket->servertype = servertype;
 
 	m_Pool.insert(make_pair(listenfd,pSocket));
 }
@@ -211,6 +154,7 @@ void CSocketServer::RegAcceptSocket(int32 fd)
 	QSocket* pSocket = new QSocket;
 	pSocket->fd = fd;
 	pSocket->type = QSOCK_ACCEPT;
+	pSocket->servertype = QSERVER_TYPE_DEFAULT;
 
 	cout << "acceptfd =" << fd << endl;
 
@@ -256,7 +200,7 @@ int CSocketServer::Run()
 
 			if( DoError(ev[i]) ){break;}
 
-			if( DoReadEx(ev[i]) ){break;}
+			if( DoRead(ev[i]) ){break;}
 
 			if( DoWrite(ev[i]) ){break;}
 		}
