@@ -34,7 +34,6 @@ class CSocketServer:public BaseThread
 	{
 		int32 fd;
 		uint8 type;
-		BaseHandler* m_pHandler;
 
 		QSocket()
 		{
@@ -47,11 +46,13 @@ public:
 
 	int Run();
 public:
-	void RegListenSocket(uint16 nIP,uint16 nPort,BaseHandler* pHandler);
+	void RegListenSocket(uint16 nIP,uint16 nPort);
 
-	void RegAcceptSocket(uint32 fd,BaseHandler* pHandler);
+	void RegAcceptSocket(int32 fd);
 
-	void Init(uint16 nIP,uint16 nPort,BaseHandler* pHandler,bool et = false);
+	void CloseSocket(int32 fd);
+
+	void Init(BaseHandler* pHandler,bool et = false);
 	//返回true,代表事件处理完毕可以跳到下个循环
 	bool DoError(Event& ev);
 	bool DoRead(Event& ev);

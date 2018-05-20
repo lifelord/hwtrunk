@@ -12,10 +12,8 @@ bool CSocketServer::DoError(Event& ev)
 {
 	if(ev.error)
 	{
-		m_epoll.Efd_del(ev.fd);
-		close(ev.fd);
+		CloseSocket(ev.fd);
 
-		cout << "DoError close" << ev.fd << endl;
 		return true;
 	}
 	return false;
@@ -37,11 +35,9 @@ bool CSocketServer::DoReadEx(Event& ev)
 					{
 						uint32 newfd = accept(ev.fd,NULL,NULL);
 
-						RegAcceptSocket(newfd,pSocket->m_pHandler);
+						RegAcceptSocket(newfd);
 
-						pSocket->m_pHandler->accept_handler(newfd,0);
-
-						cout << "DoRead:accept fd:" << newfd << endl;
+						m_pHandler->accept_handler(newfd,0);
 					}break;
 					case QSOCK_ACCEPT:
 					{
@@ -54,7 +50,7 @@ bool CSocketServer::DoReadEx(Event& ev)
 							if( nSize > 0)
 							{
 								//接收数据
-								pSocket->m_pHandler->recv_handler(ev.fd,buff,nSize);
+								m_pHandler->recv_handler(ev.fd,buff,nSize);
 
 							}else if (nSize <= 0)
 							{
@@ -62,14 +58,8 @@ bool CSocketServer::DoReadEx(Event& ev)
 								//2、小于0是错误,EAGAIN错误不处理,其他错误关闭连接
 								if (errno != EAGAIN || nSize == 0)
 								{
-									cout << "DoRead:close fd:" << ev.fd << endl;
-									//关闭
-									m_epoll.Efd_del(ev.fd);
-
-									close(ev.fd);
-
-									m_pHandler->close_handler(ev.fd);
-
+									CloseSocket(ev.fd);
+									
 									return true;
 								}else
 								{
@@ -144,12 +134,6 @@ bool CSocketServer::DoRead(Event& ev)
 						break;
 					}
 				}
-				//for test
-				 
-				//char buff2[26] = {"hello,client!"};
-
-				//Send(ev.fd,buff2,sizeof(buff2));
-
 				//非Et模式只执行一次
 				if (!m_Et){break;}
 			}
@@ -197,7 +181,7 @@ bool CSocketServer::DoWrite(Event& ev)
 	return false;
 }
 
-void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort,BaseHandler* pHandler)
+void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort)
 {
 	sockaddr_in _sockaddr_in;
     _sockaddr_in.sin_family = AF_INET;
@@ -210,7 +194,7 @@ void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort,BaseHandler* pHandle
 
 	listen(listenfd,10);
 
-	cout << "listenfd = " << listenfd << ",ip=" << nIP << endl;
+	cout << "listenfd = " << listenfd << ",ip=" << nIP << ",port=" << nPort << endl;
 
 	m_epoll.Efd_add(listenfd,NULL,m_Et);
 
@@ -218,21 +202,42 @@ void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort,BaseHandler* pHandle
 	QSocket* pSocket = new QSocket;
 	pSocket->fd = listenfd;
 	pSocket->type = QSOCK_LISTEN;
-	pSocket->m_pHandler = pHandler;
 
 	m_Pool.insert(make_pair(listenfd,pSocket));
 }
 
-void CSocketServer::RegAcceptSocket(uint32 fd,BaseHandler* pHandler)
+void CSocketServer::RegAcceptSocket(int32 fd)
 {
 	QSocket* pSocket = new QSocket;
 	pSocket->fd = fd;
 	pSocket->type = QSOCK_ACCEPT;
-	pSocket->m_pHandler = pHandler;
 
-	m_Pool.insert(make_pair(fd,pSocket));
+	cout << "acceptfd =" << fd << endl;
 
 	m_epoll.Efd_add(fd,NULL,m_Et);
+
+	m_Pool.insert(make_pair(fd,pSocket));
+}
+
+void CSocketServer::CloseSocket(int32 fd)
+{
+	cout << "CloseSocket fd:" << fd << endl;
+
+	map<uint32,QSocket*>::iterator itor = m_Pool.find(fd);
+
+	if(itor != m_Pool.end())
+	{
+		QSocket* pSocket = itor->second;
+		m_Pool.erase(pSocket->fd);
+		SAFE_DEL_POINT(pSocket);
+	}
+
+	//关闭
+	m_epoll.Efd_del(fd);
+
+	close(fd);
+
+	m_pHandler->close_handler(fd);
 }
 
 int CSocketServer::Run()
@@ -251,7 +256,7 @@ int CSocketServer::Run()
 
 			if( DoError(ev[i]) ){break;}
 
-			if( DoRead(ev[i]) ){break;}
+			if( DoReadEx(ev[i]) ){break;}
 
 			if( DoWrite(ev[i]) ){break;}
 		}
@@ -260,28 +265,13 @@ int CSocketServer::Run()
 	return 0;
 }
 
-void CSocketServer::Init(uint16 nIP,uint16 nPort,BaseHandler* pHandler,bool et)
+void CSocketServer::Init(BaseHandler* pHandler,bool et)
 {
 	m_epoll.Efd_create(1024);
 
 	m_pHandler = pHandler;
 
 	m_Et = et;
-
-	sockaddr_in _sockaddr_in;
-    _sockaddr_in.sin_family = AF_INET;
-    _sockaddr_in.sin_addr.s_addr = nIP;
-    _sockaddr_in.sin_port = htons(nPort);
-
-	m_listenfd = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
-
-	int32 nret = bind(m_listenfd,(struct sockaddr*)&_sockaddr_in,sizeof(_sockaddr_in));
-
-	listen(m_listenfd,10);
-
-	cout << "m_listenfd = " << m_listenfd << ",ip=" << nIP << endl;
-
-	m_epoll.Efd_add(m_listenfd,NULL,m_Et);
 }
 
 //队列版本

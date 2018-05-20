@@ -34,11 +34,11 @@ bool BaseUser::push_data(CStream& data)
 	if (data.length() == 0)
 	{
 		m_size = 0;
-		cout << "BaseUser::push_data:m_size=" << m_size << endl;
+		cout << "BaseUser::push_data:error m_size=" << m_size << endl;
 		return false;
 	}
 
-	cout << "BaseUser:push_data,step1" << endl;
+	cout << "BaseUser:push_data,step1 start" << endl;
 
 	uint32 nLen = data.position();
 
@@ -65,11 +65,11 @@ bool BaseUser::ReadData()
 {
 	if (m_size == 0)
 	{
-		cout << "BaseUser::ReadData1:m_size=" << m_size << endl;
+		cout << "BaseUser::ReadData,error m_size=" << m_size << endl;
 		return false;
 	}
 
-	cout << "BaseUser:ReadData,step2" << endl;
+	cout << "BaseUser:ReadData,step2 unpack start" << endl;
 
 	char* pBuffer = m_data;
 	uint32 nLastLen = m_size;
@@ -113,7 +113,7 @@ bool BaseUser::ReadData()
 	{
 		memmove(m_data, pBuffer, nLastLen);
 		m_size = nLastLen;
-		cout << "BaseUser:ReadData2:m_size =" << m_size << endl;
+		cout << "BaseUser:ReadData,step3 unpack end,m_size =" << m_size << endl;
 	}
 	return true;
 }

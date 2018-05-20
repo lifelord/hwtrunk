@@ -6,7 +6,13 @@ int main()
 
 	UnPackHandler g_UnpackHandler;
 
-	g_SocketServer.Init(INADDR_ANY,8001,&g_UnpackHandler);
+	g_SocketServer.Init(&g_UnpackHandler);
+
+	//client server port:8001
+	g_SocketServer.RegListenSocket(INADDR_ANY,8001);
+
+	//web server port:8002
+	g_SocketServer.RegListenSocket(INADDR_ANY,8002);
 
 	g_UnpackHandler.Start();
 
