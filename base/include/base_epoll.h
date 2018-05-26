@@ -8,7 +8,7 @@
 struct Event
 {
 	int32 fd;
-	//void* ud;
+	void* ud;
 	bool read;
 	bool write;
 	bool error;
@@ -37,18 +37,6 @@ public:
 private:
 	//监听句柄
 	uint32 m_efd;
-};
-
-class BaseHandler
-{
-public:
-	BaseHandler(){}
-	virtual ~BaseHandler(){}
-public:
-	virtual void accept_handler(int32 fd,uint32 nhost,uint8 servertype) = 0;
-	virtual void recv_handler(int32 fd,void* buff,uint32 nlen) = 0;
-	virtual void close_handler(int32 fd) = 0;
-	virtual void write_handler(int32 fd) = 0;
 };
 
 #endif

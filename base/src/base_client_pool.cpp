@@ -25,6 +25,8 @@ bool BaseUser::OnRecv(char* pData,uint32 sz)
 
 	cout << "BaseUser::OnRecv:Packet=(pHead = " << pHead->pack_start << ",pack_type = " << pHead->pack_type 
 		<< ",pack_len = " << pHead->pack_len << ",pack_cmd = " << pHead->pack_cmd <<")"<< endl;
+
+	m_pSandBox->CallFunc("C2s_hero_login", GetSockfd(), pData);
 	
     return true;
 }

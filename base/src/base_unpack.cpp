@@ -10,9 +10,16 @@ UnPackHandler::~UnPackHandler()
 
 }
 
+void UnPackHandler::Init(const char* path)
+{
+	m_SandBox.Init();
+	m_SandBox.Load(path);
+}
+
 int UnPackHandler::Run()
 {
 	cout << "UnPackHandler Start" << endl;
+
 	while(GetbActive())
 	{
 		/*if (m_sem.WaitSema(100) != 1)
@@ -84,6 +91,8 @@ void UnPackHandler::accept_handler(int32 fd,uint32 nhost,uint8 servertype)
 		pUnPack->pUser->GetSockfd() = fd;
 
 		pUnPack->pUser->GetHost() = nhost;
+
+		pUnPack->pUser->SetSandBox(&m_SandBox);
 
 		m_Pool.insert(make_pair(fd,pUnPack));
 	}

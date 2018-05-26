@@ -23,6 +23,12 @@
 #include<unistd.h>
 #include<pthread.h>
 
+extern "C" {
+#include<lua.h>
+#include<lauxlib.h>
+#include<lualib.h>
+}
+
 using namespace::std;
 
 #define INFINITE	-1

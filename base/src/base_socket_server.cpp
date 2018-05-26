@@ -1,4 +1,5 @@
-#include "base_socket_server.h"
+#include"base_socket_server.h"
+
 
 CSocketServer::CSocketServer()
 {
@@ -125,20 +126,13 @@ bool CSocketServer::DoWrite(Event& ev)
 
 void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort,uint8 servertype)
 {
-	sockaddr_in _sockaddr_in;
-    _sockaddr_in.sin_family = AF_INET;
-    _sockaddr_in.sin_addr.s_addr = nIP;
-    _sockaddr_in.sin_port = htons(nPort);
+	int32 listenfd = SocketApi::Socket_ex(AF_INET,SOCK_STREAM,IPPROTO_TCP);
 
-	int32 listenfd = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+	int32 nret = SocketApi::Bind_ex(listenfd,nIP,nPort);
 
-	int32 nret = bind(listenfd,(struct sockaddr*)&_sockaddr_in,sizeof(_sockaddr_in));
-
-	listen(listenfd,10);
+	SocketApi::Listen_ex(listenfd);
 
 	cout << "listenfd = " << listenfd << ",ip=" << nIP << ",port=" << nPort << endl;
-
-	m_epoll.Efd_add(listenfd,NULL,m_Et);
 
 	//暂时不做重复检测,以后用对象池替换
 	QSocket* pSocket = new QSocket;
@@ -147,6 +141,8 @@ void CSocketServer::RegListenSocket(uint16 nIP,uint16 nPort,uint8 servertype)
 	pSocket->servertype = servertype;
 
 	m_Pool.insert(make_pair(listenfd,pSocket));
+
+	m_epoll.Efd_add(listenfd,NULL,m_Et);
 }
 
 void CSocketServer::RegAcceptSocket(int32 fd)
@@ -158,9 +154,33 @@ void CSocketServer::RegAcceptSocket(int32 fd)
 
 	cout << "acceptfd =" << fd << endl;
 
-	m_epoll.Efd_add(fd,NULL,m_Et);
-
 	m_Pool.insert(make_pair(fd,pSocket));
+
+	m_epoll.Efd_add(fd,NULL,m_Et);
+}
+
+void CSocketServer::RegConnectSocket(uint16 nIP,uint16 nPort,uint8 servertype)
+{
+	int32 fd = SocketApi::Socket_ex(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+
+	if(SocketApi::IsValid(fd))
+	{
+		bool bret = SocketApi::Connect_ex(fd,nIP,nPort);
+
+		if (bret)
+		{
+			QSocket* pSocket = new QSocket;
+			pSocket->fd = fd;
+			pSocket->type = QSOCK_CONNECT;
+			pSocket->servertype = servertype;
+
+			cout << "Connectfd =" << fd << endl;
+
+			m_Pool.insert(make_pair(fd,pSocket));
+
+			m_epoll.Efd_add(fd,NULL,m_Et);
+		}
+	}
 }
 
 void CSocketServer::CloseSocket(int32 fd)
@@ -198,11 +218,11 @@ int CSocketServer::Run()
 		{
 			cout << "ev:fd=" <<ev[0].fd << ",read=" << ev[0].read << ",write=" << ev[0].write << ",error=" << ev[0].error << endl;
 
-			if( DoError(ev[i]) ){break;}
+			if( DoError(ev[i]) ){continue;}
 
-			if( DoRead(ev[i]) ){break;}
+			if( DoRead(ev[i]) ){continue;}
 
-			if( DoWrite(ev[i]) ){break;}
+			if( DoWrite(ev[i]) ){continue;}
 		}
 	}
 	cout << "CSocketServer End" << endl;

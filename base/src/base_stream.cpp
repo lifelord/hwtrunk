@@ -180,7 +180,7 @@ void CStream::read( std::string &strValue, uint32 uiSize )
   Input:          // strValue : 需要写入的 std::string 字符串变量
                   // uiSize : 需要写入的数据长度
 *************************************************/
-void CStream::write( std::string &strValue, uint32 uiSize )
+void CStream::write(const std::string &strValue, uint32 uiSize )
 {
     write( strValue.c_str(), uiSize );
 }
