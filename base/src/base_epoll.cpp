@@ -38,8 +38,15 @@ bool CEpoll::Efd_add(int32 fd,void* ud,bool et)
 	struct epoll_event ev;
 
 	ev.events = EPOLLIN;
-	ev.data.fd = fd;
-	//ev.data.ptr = ud;
+
+	//if(ud == NULL)
+	//{
+		ev.data.fd = fd;
+	//}else
+	//{
+		//ev.data.ptr = ud;
+	//}
+	
 	if (et)
 	{
 		Efd_nonblocking(fd);
@@ -51,6 +58,7 @@ bool CEpoll::Efd_add(int32 fd,void* ud,bool et)
 		cout << "Efd_add:epoll_ctl failed" << endl;
 		return false;
 	}
+	
 	return true;
 }
 
@@ -58,6 +66,7 @@ bool CEpoll::Efd_add(int32 fd,void* ud,bool et)
 bool CEpoll::Efd_del(int32 fd)
 {
 	bool binvalid = Efd_invalid(m_efd);
+
 	if (binvalid)
 	{
 		cout << "Efd_del binvalid = true" << endl;
@@ -81,9 +90,17 @@ bool CEpoll::Efd_write(int32 fd,void* ud,bool enable)
 		return false;
 	} 
 	struct epoll_event ev;
+
 	ev.events = EPOLLIN | (enable ? EPOLLOUT : 0);
-	ev.data.fd = fd;
-	//ev.data.ptr = ud;
+
+	//if(ud == NULL)
+	//{
+		ev.data.fd = fd;
+	//}else
+	//{
+		//ev.data.ptr = ud;
+	//}
+	
 	if(epoll_ctl(m_efd, EPOLL_CTL_MOD, fd, &ev) == -1)
 	{
 		cout << "Efd_write epoll_ctl failed" << endl;
@@ -102,11 +119,15 @@ uint32 CEpoll::Efd_wait(struct Event* e,uint32 max)
 
 	for(uint32 i=0;i<n;++i)
 	{
-		e[i].fd = ev[i].data.fd;
-		//e[i].ud = ev[i].data.ptr;
-
-		cout << "Efd_wait,fd=" << ev[i].data.fd << endl;
-
+		//if(ev[i].data.ptr != NULL)
+		//{
+			//e[i].ud = ev[i].data.ptr;
+		//}else
+		//{
+			e[i].fd = ev[i].data.fd;
+			cout << "Efd_wait,fd=" << ev[i].data.fd << endl;
+		//}
+		
 		unsigned flag = ev[i].events;//event
 
 		e[i].read = (flag & EPOLLIN) != 0;

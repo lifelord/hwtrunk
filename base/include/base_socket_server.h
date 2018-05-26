@@ -7,6 +7,8 @@
 #include"base_client_pool.h"
 #include"base_lock.h"
 #include"base_queue.h"
+#include"base_socket.h"
+#include"base_unpack.h"
 
 //用队列去存待发送的消息
 class CSocketServer:public BaseThread
@@ -49,6 +51,8 @@ public:
 	void RegListenSocket(uint16 nIP,uint16 nPort,uint8 servertype);
 
 	void RegAcceptSocket(int32 fd);
+
+	void RegConnectSocket(uint16 nIP,uint16 nPort,uint8 servertype);
 
 	void CloseSocket(int32 fd);
 

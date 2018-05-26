@@ -14,6 +14,8 @@ int main()
 	//web server port:8002
 	g_SocketServer.RegListenSocket(INADDR_ANY,8002,QSERVER_TYPE_WEB);
 
+	g_UnpackHandler.Init("../game/lua/preload.lua");
+
 	g_UnpackHandler.Start();
 
 	g_SocketServer.Start();

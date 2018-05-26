@@ -1,4 +1,5 @@
 #include "base_include.h"
+#include "pack_protocol.h"
 
 #define SERVER_PORT 8001 
 
@@ -51,11 +52,21 @@ int main(int argc, char *argv[])
         MsgHead*& pHead = stream.NewHead<MsgHead>();
         pHead->pack_start = PACKET_START;
         pHead->pack_type = 1;
-        pHead->pack_len = sizeof(MsgHead);
         pHead->pack_cmd = i;
+
+        qmyx::QRoleLogin msg;
+        msg.set_user_id(1);
+        msg.set_role_id(2);
+        msg.set_session_id(3);
+        msg.set_version(i);
+
+        stream.write(msg.SerializeAsString(),msg.ByteSize());
+
+        pHead->pack_len = stream.length();
+
         send(client_fd,&stream[0],stream.length(),0);
     }
-
+ 
     for(;;){}
 
     return 0;

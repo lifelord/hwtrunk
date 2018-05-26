@@ -123,6 +123,6 @@ public:
 	Input:          // strValue : 需要写入的 std::string 字符串变量
 	// uiSize : 需要写入的数据长度
 	*************************************************/
-	void write(std::string &strValue, uint32 uiSize);
+	void write(const std::string &strValue, uint32 uiSize);
 };
 #endif

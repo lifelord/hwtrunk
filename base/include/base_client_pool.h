@@ -4,6 +4,7 @@
 #include "base_util.h"
 #include "base_net_define.h"
 #include "base_stream.h"
+#include "base_sandbox.h"
 
 class BaseUser
 {
@@ -21,6 +22,7 @@ public:
 	uint32& GetHost() { return m_Host; }
 	uint32& GetIndex() { return m_Index; }
 	uint32& GetServerType(){ return m_servertype;}
+	void    SetSandBox(CSandBox* pSendBox){m_pSandBox = pSendBox;}
 private:
 	char* m_buff;
 	char* m_data;
@@ -31,6 +33,7 @@ private:
 	uint32 m_Host;
 	uint32 m_Index;
 	uint32 m_servertype;	//根据服务器定解包类型
+	CSandBox* m_pSandBox;
 };
 
 #endif
