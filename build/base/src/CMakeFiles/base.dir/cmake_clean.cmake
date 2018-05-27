@@ -1,36 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lapi.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lauxlib.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lbaselib.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lcode.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/ldblib.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/ldebug.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/ldo.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/ldump.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lfunc.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lgc.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/linit.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/liolib.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/llex.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lmathlib.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lmem.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/loadlib.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lobject.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lopcodes.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/loslib.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lparser.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lstate.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lstring.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lstrlib.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/ltable.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/ltablib.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/ltm.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lua.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/luac.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lundump.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lvm.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/lzio.c.o"
-  "CMakeFiles/base.dir/__/__/Trd/lua-5.1.4/src/print.c.o"
   "CMakeFiles/base.dir/base_client_pool.cpp.o"
   "CMakeFiles/base.dir/base_epoll.cpp.o"
   "CMakeFiles/base.dir/base_sandbox.cpp.o"
@@ -44,6 +12,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C CXX)
+foreach(lang CXX)
   include(CMakeFiles/base.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

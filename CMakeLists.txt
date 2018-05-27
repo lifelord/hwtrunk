@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.0)
 
 set(CMAKE_BUILD_TYPE DEBUG)
 
-set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -ldl")
 
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/Trd/lib)
 

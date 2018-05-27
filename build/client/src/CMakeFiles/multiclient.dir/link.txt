@@ -1,1 +1,1 @@
-/usr/bin/c++  -O0 -g  -rdynamic CMakeFiles/multiclient.dir/multimain.cpp.o  -o ../../../bin/multiclient -lpthread ../../../Trd/lib/libbase.a ../../../Trd/lib/libprotobuf.a 
+/usr/bin/c++  -O0 -g -ldl  -rdynamic CMakeFiles/multiclient.dir/multimain.cpp.o  -o ../../../bin/multiclient -lpthread ../../../Trd/lib/libbase.a ../../../Trd/lib/libprotobuf.a 

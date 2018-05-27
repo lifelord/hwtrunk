@@ -1,1 +1,1 @@
-/usr/bin/c++  -O0 -g  -rdynamic CMakeFiles/game.dir/main.cpp.o  -o ../../../bin/game -lpthread ../../../Trd/lib/libbase.a ../../../Trd/lib/liblua.a ../../../Trd/lib/libprotobuf.a 
+/usr/bin/c++  -O0 -g -ldl  -rdynamic CMakeFiles/game.dir/main.cpp.o  -o ../../../bin/game -lpthread ../../../Trd/lib/libbase.a ../../../Trd/lib/liblua.a ../../../Trd/lib/libprotobuf.a 

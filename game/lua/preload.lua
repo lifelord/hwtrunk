@@ -47,7 +47,7 @@ function OnLuaRecv(vfd,cmd,ProtoMsg)
 	local protoName = PROTOCALINFO.GET_PROTO_NAME(cmd)
 
 	--local DecodeMsg = PBC.decode(protoName, ProtoMsg)
-	if protoName ~= "" then
+	if protoName and  PROTO_LISTENER[protoName] then
 		PROTO_LISTENER[protoName](vfd,ProtoMsg)
 	end
 end

@@ -1,1 +1,1 @@
-/usr/bin/c++  -O0 -g  -rdynamic CMakeFiles/client.dir/main.cpp.o  -o ../../../bin/client -lpthread ../../../Trd/lib/libbase.a ../../../Trd/lib/libcommon.a ../../../Trd/lib/libprotobuf.a 
+/usr/bin/c++  -O0 -g -ldl  -rdynamic CMakeFiles/client.dir/main.cpp.o  -o ../../../bin/client -lpthread ../../../Trd/lib/libbase.a ../../../Trd/lib/libcommon.a ../../../Trd/lib/libprotobuf.a 

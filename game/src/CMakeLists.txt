@@ -1,7 +1,5 @@
 include_directories("${BASE_INCLUDE_DIR}")
 
-#aux_source_directory("${LUA_SRC_DIR}" LUA_SRC)
-
 add_executable(game main.cpp)
 
 find_package(Threads)
