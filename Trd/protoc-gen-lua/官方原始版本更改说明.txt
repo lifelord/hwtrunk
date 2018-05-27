@@ -1,0 +1,48 @@
+针对protobuf模块的更改
+
+1：protobuf/protobuf.lua更改
+
+在local function Message(descriptor)函数中添加了
+message_meta._member._descriptor=descriptor语句
+目的是为了：
+更改protobuf.lua的Message函数生成类的规则，使得每个类生成后的都具有_descriptor属性，
+这个属性值是个table,保存了产生类的基础属性，比如类名，full_name等
+
+
+仔细查看protobuf/protobuf.lua的生成类的规则，可以发现其类实例是用了表的__call调用
+而类本身的信息获取是一个空表，设置了元表
+
+
+这个函数有BUG， fixed 了 encoder.lua
+使得支持 repeated string的数据可以被打包发送
+
+function StringEncoder(field_number, is_repeated, is_packed)
+    local tag = TagBytes(field_number, wire_format.WIRETYPE_LENGTH_DELIMITED)
+    local EncodeVarint = _EncodeVarint
+    assert(not is_packed)
+    if is_repeated then
+        return function (write, value)
+        --[[
+            for element in value do
+--                encoded = element.encode('utf-8')
+                write(tag)
+                EncodeVarint(write, #value)
+                write(element)
+            end
+     			--]]
+     			for _,element in ipairs(value) do
+     						write(tag)
+              	EncodeVarint(write, #element)
+                write(element)
+     			end
+        end
+    else
+        return function (write, value)
+--            local encoded = value.encode('utf-8')
+            write(tag)
+            EncodeVarint(write, #value)
+            return write(value)
+        end
+    end
+end
+

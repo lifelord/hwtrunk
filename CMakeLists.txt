@@ -22,7 +22,7 @@ set(CLIENT_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/client/include")
 
 set(CLIENT_SRC_DIR "${PROJECT_SOURCE_DIR}/client/src")
 
-set(LUA_SRC_DIR "${PROJECT_SOURCE_DIR}/3rd/lua-5.1.4/src")
+set(LUA_SRC_DIR "${PROJECT_SOURCE_DIR}/Trd/lua-5.1.4/src")
 
 set(PROTOBUFF_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/Trd/google/protobuf")
 

@@ -6,5 +6,5 @@ CXX_FLAGS = -O0 -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/game/server/hwtrunk/base/include 
+CXX_INCLUDES = -I/home/game/server/hwtrunk/base/include -I/home/game/server/hwtrunk/Trd/google/protobuf -I/home/game/server/hwtrunk/common/include 
 

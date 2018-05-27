@@ -2,13 +2,10 @@ local table=table
 local math=math
 local pairs=pairs
 
-function OnLogin(vfd,ProtoMsg)
-	print("OnLogin,vfd,ProtoMsg:" .. tostring(vfd) .. "," .. tostring(ProtoMsg))
+function OnPlayerAdd(vfd,ProtoMsg)
+	print("OnPlayerAdd,vfd,ProtoMsg:" .. tostring(vfd) .. "," .. tostring(ProtoMsg))
 end
 
 function __init__()
-	print("login.lua,__init__")
-	ProtoRegister("C2s_hero_login","OnLogin")
+	ProtoRegister("C2s_login_player_add","OnPlayerAdd")
 end
-
-__init__()

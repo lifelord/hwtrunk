@@ -1,12 +1,20 @@
 local old_path = package.path
 
 --将protobuffer.lua加入到package.path中
-local p = "3rd/pbc/binding/lua/" 
-package.path = string.format("%s;%s/?.lua;%s/?/init.lua;",old_path,p,p)
+local p = "/home/game/server/hwtrunk/Trd/pbc"
+
+local workpath = "/home/game/server/hwtrunk/protocal/?.lua;/home/game/server/hwtrunk/game/lua/?.lua;"
+
+package.path = string.format("%s;%s/?.lua;%s",old_path,p,workpath)
+
+--print("luapath = " .. package.path)
 
 --将将protobuffer.so加入到package.cpath
-local protobuff_path = "3rd/pbc/binding/lua/?.so;"
+local protobuff_path = "/home/game/server/hwtrunk/Trd/pbc/?.so"
+
 package.cpath = string.format("%s;%s",protobuff_path,package.cpath)
+
+--print("cluapath = ".. package.cpath)
 
 PROTO_ENV = {}
 PROTO_LISTENER = {}
@@ -25,8 +33,23 @@ function ProtoRegister(protoName, listenerName)
 	PROTO_LISTENER[protoName] = env[listenerName]
 end
 
+dofile("../game/lua/update.lua")
+
+dofile("../Trd/pbc/pbc.lua")
+PBC = require "pbc"
+
+--PBC = Import("../Trd/pbc/pbc.lua")
+
+PROTOCALINFO = Import("../protocal/protocol_info.lua")
+LOGIN = Import("../game/lua/login.lua")
+
+function OnLuaRecv(vfd,cmd,ProtoMsg)
+	local protoName = PROTOCALINFO.GET_PROTO_NAME(cmd)
+
+	--local DecodeMsg = PBC.decode(protoName, ProtoMsg)
+	if protoName ~= "" then
+		PROTO_LISTENER[protoName](vfd,ProtoMsg)
+	end
+end
+
 print("load preload.lua")
-
-dofile("../game/lua/login.lua")
-
-package.path

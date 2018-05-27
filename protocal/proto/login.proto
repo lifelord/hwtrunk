@@ -1,0 +1,137 @@
+//-----------------------------------c2s-----------------------------------
+// 请求创建角色
+message C2s_login_player_add {
+	required string name = 1;					// 角色名
+	optional int32 sex = 2;						// 性别，可选备用
+	required int32 head_id = 3;					// 头像编号
+	optional int32 partnerno = 4;				// 选择初始随从编号
+	required int32 profession = 5;				// 职业
+}
+
+// 请求删除角色
+message C2s_login_del_player {					
+	required string user_id = 1;				// 角色ID
+}
+
+// 请求用户名是否可用
+message C2s_login_playername {
+	required string name = 1;					// 请求的用户名
+}
+
+// 请求角色进入游戏
+message C2s_login_player_enter {				
+	required string id =1; 	  					// 当前选中角色的UID
+	repeated string scene_name = 2;				// 可以登录的场景
+	required int32 isall = 3;					// 是否所有场景都有了		1是
+}
+
+// 联运平台账号登录
+message C2s_login_corp_account {				
+	required int32 corp_id =1; 	  				// 联运商编号
+	required string acct = 2;  					// 联运商玩家账号
+	required int32 adult =3;    				// 账号防沉迷信息,0,1,2
+	required int32 login_time  = 4; 			// 账号在平台的登录时间，登录时间超过10分钟，则票据过期
+	required string sign = 5; 					// 验证票据信息,md5({corp_id}_{acct_id}_{login_time}_{平台密匙})
+	optional string extdata = 6 ; 				// 扩展信息a=xx&b=xx&k=xx的方式获取，为了日后的其他登录信息获取
+}
+
+message C2s_login_player_recon {		//角色重连
+	required string id =1; 	  			//id：玩家选择的一个id登陆到游戏中
+	required int32 time = 2;			//客户端连接时间
+	repeated string scene_name = 3;			//可以登录的场景
+	required int32 isall = 4;				//是否所有场景都有了		1是
+	required string sign = 5;			//重连sign 格式：md5(uid=?time=?key=?)
+}
+
+message S2c_login_player_recon {		//角色重连
+	required int32 place_holder = 1;
+}
+
+message C2s_login_check_time {			//与服务器对时
+	required int32 place_holder = 1;
+}
+
+message S2c_login_check_time {
+	required string sec = 1;			//10位秒
+	required uint32 usec = 2;	 		//6位微秒
+}
+
+//-----------------------------------s2c-----------------------------------
+//返回登录错误信息
+message S2c_login_error {
+	required int32 err_no =1; 	  				//错误编号
+	required string err_desc =2; 	  			//错误描述
+}
+
+// 返回创角结果
+message S2c_login_player_add{
+	required int32 add_result = 1;				// 创角结果
+	repeated Login_list_info list_info = 2;    	// 列表信息
+	optional string default_id = 3;     		// 增加一个可选参数 用来标识玩家上一次登录的角色或者是新创建的角色
+}
+
+// 返回删角结果
+message S2c_login_del_player{
+	required int32 del_result = 1;             	// 删除结果
+	repeated Login_list_info list_info = 2;    	// 列表信息
+	optional string default_id = 3;            	// 增加一个可选参数 用来标识玩家上一次登录的角色或者是新创建的角色
+}
+
+// 返回用户名是否可用
+message S2c_login_playername {
+	required int32 exist = 1;					// 1 已存在 2 不存在
+}
+
+// 踢人出游戏
+message S2c_login_kickout {
+	required int32 place_holder = 1;			// 防止协议为空
+}
+
+// 包装角色信息的结构体
+message Login_list_info {						// 登录角色信息
+	required string name = 1;					// 角色名
+	required int32 head_id = 2;					// 头像ID
+	required string id = 3;						// 角色ID
+	required int32 grade = 4;					// 等级
+	required int32 family = 5;					// 门派ID
+	required int32 create_time = 6;				// 创建时间
+	optional int32 sex = 7;						// 性别
+	optional int32 profession = 8;				// 职业
+}
+
+// 发送角色列表
+message S2c_login_player_list {			
+	repeated Login_list_info list_info = 1;    	// 列表信息
+	optional string default_id = 2;     		// 增加一个可选参数 用来标识玩家上一次登录的角色或者是新创建的角色
+}
+
+// 发送登录状态 好像客户端没用到
+message S2c_login_status {			
+	required int32 status = 1;					// 0 登录失败 1 登录成功,开始发送玩家数据 2 初始化数据完毕
+}
+
+// 登录提示
+message S2c_login_tips {			
+	required string msg = 1;					// 提示信息
+}
+
+message C2s_login_jihuo {
+	required string jihuoma = 1;
+}
+
+message S2c_login_jihuo {
+	required int32 placeholder = 1;
+}
+
+// 暂时不是很懂这是什么操作。。 -by jsp
+message S2c_login_addplayer {
+	required string uid = 1;
+	required string name = 2;
+	required int32 yuanbao = 3;
+	required int32 vip = 4;
+	required int32 create_time = 5;
+}
+
+message C2s_login_newok {			//loading完毕进入游戏
+	required int32 placeholder = 1;
+}

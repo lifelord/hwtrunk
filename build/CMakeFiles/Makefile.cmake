@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.10.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.10.2/CMakeSystem.cmake"
   "../client/src/CMakeLists.txt"
+  "../common/src/CMakeLists.txt"
   "../game/src/CMakeLists.txt"
   "/usr/share/cmake-3.10/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake"
@@ -48,6 +49,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "base/src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "common/src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "game/src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "client/src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
@@ -55,6 +57,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "base/src/CMakeFiles/base.dir/DependInfo.cmake"
+  "common/src/CMakeFiles/common.dir/DependInfo.cmake"
   "game/src/CMakeFiles/game.dir/DependInfo.cmake"
   "client/src/CMakeFiles/multiclient.dir/DependInfo.cmake"
   "client/src/CMakeFiles/client.dir/DependInfo.cmake"

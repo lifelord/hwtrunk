@@ -8,10 +8,17 @@ client/src/CMakeFiles/client.dir/main.cpp.o
  ../base/include/base_lock.h
  ../base/include/base_net_define.h
  ../base/include/base_queue.h
+ ../base/include/base_sandbox.h
  ../base/include/base_socket.h
  ../base/include/base_socket_server.h
  ../base/include/base_stream.h
  ../base/include/base_thread.h
  ../base/include/base_unpack.h
  ../base/include/base_util.h
+ ../common/include/AI.pb.h
+ ../common/include/AskLogin.pb.h
+ ../common/include/Common.pb.h
+ ../common/include/Map.pb.h
+ ../common/include/RetCode.pb.h
+ ../common/include/pack_protocol.h
  /home/game/server/hwtrunk/client/src/main.cpp

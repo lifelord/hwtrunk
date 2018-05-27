@@ -7,6 +7,7 @@ game/src/CMakeFiles/game.dir/main.cpp.o: ../base/include/base_include.h
 game/src/CMakeFiles/game.dir/main.cpp.o: ../base/include/base_lock.h
 game/src/CMakeFiles/game.dir/main.cpp.o: ../base/include/base_net_define.h
 game/src/CMakeFiles/game.dir/main.cpp.o: ../base/include/base_queue.h
+game/src/CMakeFiles/game.dir/main.cpp.o: ../base/include/base_sandbox.h
 game/src/CMakeFiles/game.dir/main.cpp.o: ../base/include/base_socket.h
 game/src/CMakeFiles/game.dir/main.cpp.o: ../base/include/base_socket_server.h
 game/src/CMakeFiles/game.dir/main.cpp.o: ../base/include/base_stream.h

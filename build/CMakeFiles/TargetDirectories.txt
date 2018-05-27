@@ -3,6 +3,9 @@
 /home/game/server/hwtrunk/build/base/src/CMakeFiles/rebuild_cache.dir
 /home/game/server/hwtrunk/build/base/src/CMakeFiles/edit_cache.dir
 /home/game/server/hwtrunk/build/base/src/CMakeFiles/base.dir
+/home/game/server/hwtrunk/build/common/src/CMakeFiles/rebuild_cache.dir
+/home/game/server/hwtrunk/build/common/src/CMakeFiles/edit_cache.dir
+/home/game/server/hwtrunk/build/common/src/CMakeFiles/common.dir
 /home/game/server/hwtrunk/build/game/src/CMakeFiles/rebuild_cache.dir
 /home/game/server/hwtrunk/build/game/src/CMakeFiles/edit_cache.dir
 /home/game/server/hwtrunk/build/game/src/CMakeFiles/game.dir

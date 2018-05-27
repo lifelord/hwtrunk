@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     uint32 num = atoi(argv[2]);
     cout << num;
 
-    for(uint32 i = 0;i<num;++i)
+    for(uint32 i = 1;i<=num;++i)
     {
         CStream stream;
         MsgHead*& pHead = stream.NewHead<MsgHead>();

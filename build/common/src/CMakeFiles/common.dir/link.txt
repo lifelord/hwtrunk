@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../Trd/lib/libcommon.a  CMakeFiles/common.dir/AI.pb.cc.o CMakeFiles/common.dir/AskLogin.pb.cc.o CMakeFiles/common.dir/Common.pb.cc.o CMakeFiles/common.dir/Map.pb.cc.o CMakeFiles/common.dir/RetCode.pb.cc.o
+/usr/bin/ranlib ../../../Trd/lib/libcommon.a

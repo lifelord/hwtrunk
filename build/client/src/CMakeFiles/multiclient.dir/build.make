@@ -90,7 +90,8 @@ multiclient_EXTERNAL_OBJECTS =
 
 ../bin/multiclient: client/src/CMakeFiles/multiclient.dir/multimain.cpp.o
 ../bin/multiclient: client/src/CMakeFiles/multiclient.dir/build.make
-../bin/multiclient: ../lib/libbase.a
+../bin/multiclient: ../Trd/lib/libbase.a
+../bin/multiclient: ../Trd/lib/libprotobuf.a
 ../bin/multiclient: client/src/CMakeFiles/multiclient.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../bin/multiclient"
 	cd /home/game/server/hwtrunk/build/client/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/multiclient.dir/link.txt --verbose=$(VERBOSE)

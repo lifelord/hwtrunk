@@ -90,7 +90,9 @@ game_EXTERNAL_OBJECTS =
 
 ../bin/game: game/src/CMakeFiles/game.dir/main.cpp.o
 ../bin/game: game/src/CMakeFiles/game.dir/build.make
-../bin/game: ../lib/libbase.a
+../bin/game: ../Trd/lib/libbase.a
+../bin/game: ../Trd/lib/liblua.a
+../bin/game: ../Trd/lib/libprotobuf.a
 ../bin/game: game/src/CMakeFiles/game.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/game/server/hwtrunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../bin/game"
 	cd /home/game/server/hwtrunk/build/game/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game.dir/link.txt --verbose=$(VERBOSE)
