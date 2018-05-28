@@ -1,4 +1,3 @@
-print("hello pbc")
 local c = require "protobuf.c"
 
 local setmetatable = setmetatable

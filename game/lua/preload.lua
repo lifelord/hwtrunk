@@ -35,19 +35,16 @@ end
 
 dofile("../game/lua/update.lua")
 
-dofile("../Trd/pbc/pbc.lua")
-PBC = require "pbc"
-
---PBC = Import("../Trd/pbc/pbc.lua")
-
+PBC = Import("../Trd/pbc/pbc.lua")
 PROTOCALINFO = Import("../protocal/protocol_info.lua")
 LOGIN = Import("../game/lua/login.lua")
 
 function OnLuaRecv(vfd,cmd,ProtoMsg)
 	local protoName = PROTOCALINFO.GET_PROTO_NAME(cmd)
 
-	--local DecodeMsg = PBC.decode(protoName, ProtoMsg)
 	if protoName and  PROTO_LISTENER[protoName] then
+		local DecodeMsg = PBC.decode(protoName, ProtoMsg)
+
 		PROTO_LISTENER[protoName](vfd,ProtoMsg)
 	end
 end
