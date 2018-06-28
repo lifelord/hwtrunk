@@ -16,6 +16,11 @@ base/src/CMakeFiles/base.dir/base_sandbox.cpp.o: ../base/include/base_sandbox.h
 base/src/CMakeFiles/base.dir/base_sandbox.cpp.o: ../base/include/base_util.h
 base/src/CMakeFiles/base.dir/base_sandbox.cpp.o: ../base/src/base_sandbox.cpp
 
+base/src/CMakeFiles/base.dir/base_signal.cpp.o: ../base/include/base_lock.h
+base/src/CMakeFiles/base.dir/base_signal.cpp.o: ../base/include/base_signal.h
+base/src/CMakeFiles/base.dir/base_signal.cpp.o: ../base/include/base_util.h
+base/src/CMakeFiles/base.dir/base_signal.cpp.o: ../base/src/base_signal.cpp
+
 base/src/CMakeFiles/base.dir/base_socket.cpp.o: ../base/include/base_socket.h
 base/src/CMakeFiles/base.dir/base_socket.cpp.o: ../base/include/base_util.h
 base/src/CMakeFiles/base.dir/base_socket.cpp.o: ../base/src/base_socket.cpp

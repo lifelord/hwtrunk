@@ -80,8 +80,6 @@ int UnPackHandler::Run()
 void UnPackHandler::accept_handler(int32 fd,uint32 nhost,uint8 servertype)
 {
 	{
-		AutoLock safe(&m_lock);
-
 		UnPack* pUnPack = new UnPack;
 
 		pUnPack->pUser = new BaseUser;
@@ -94,6 +92,7 @@ void UnPackHandler::accept_handler(int32 fd,uint32 nhost,uint8 servertype)
 
 		pUnPack->pUser->SetSandBox(&m_SandBox);
 
+		AutoLock safe(&m_lock);
 		m_Pool.insert(make_pair(fd,pUnPack));
 	}
 }

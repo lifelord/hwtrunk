@@ -8,6 +8,7 @@ client/src/CMakeFiles/multiclient.dir/multimain.cpp.o: ../base/include/base_lock
 client/src/CMakeFiles/multiclient.dir/multimain.cpp.o: ../base/include/base_net_define.h
 client/src/CMakeFiles/multiclient.dir/multimain.cpp.o: ../base/include/base_queue.h
 client/src/CMakeFiles/multiclient.dir/multimain.cpp.o: ../base/include/base_sandbox.h
+client/src/CMakeFiles/multiclient.dir/multimain.cpp.o: ../base/include/base_signal.h
 client/src/CMakeFiles/multiclient.dir/multimain.cpp.o: ../base/include/base_socket.h
 client/src/CMakeFiles/multiclient.dir/multimain.cpp.o: ../base/include/base_socket_server.h
 client/src/CMakeFiles/multiclient.dir/multimain.cpp.o: ../base/include/base_stream.h

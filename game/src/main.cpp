@@ -1,10 +1,19 @@
 #include "base_include.h"
 
+static void CatchExit(int signo)
+{
+	cout << "CatchExit Signo,Signo=" << signo << endl;
+}
+
 int main()
 {
 	CSocketServer g_SocketServer;
 
 	UnPackHandler g_UnpackHandler;
+
+	SignalMgr g_SignalMgr;
+
+	g_SignalMgr.Init(NULL,CatchExit,NULL);
 
 	g_SocketServer.Init(&g_UnpackHandler);
 
@@ -23,6 +32,8 @@ int main()
 	g_UnpackHandler.Stop();
 
 	g_SocketServer.Stop();
+
+	cout << "Exist Game!" << endl;
 
 	/*char buff[512] = {"hello"};
 

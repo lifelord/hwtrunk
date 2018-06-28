@@ -83,6 +83,7 @@ bool CSocketServer::DoRead(Event& ev)
 			}
 		}
 	}
+	return false;
 }
 
 bool CSocketServer::DoWrite(Event& ev)
@@ -216,7 +217,7 @@ int CSocketServer::Run()
 
 		for(uint32 i = 0;i<n;++i)
 		{
-			cout << "ev:fd=" <<ev[0].fd << ",read=" << ev[0].read << ",write=" << ev[0].write << ",error=" << ev[0].error << endl;
+			cout << "ev:fd=" <<ev[i].fd << ",read=" << ev[i].read << ",write=" << ev[i].write << ",error=" << ev[i].error << endl;
 
 			if( DoError(ev[i]) ){continue;}
 
@@ -225,7 +226,9 @@ int CSocketServer::Run()
 			if( DoWrite(ev[i]) ){continue;}
 		}
 	}
+
 	cout << "CSocketServer End" << endl;
+
 	return 0;
 }
 

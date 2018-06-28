@@ -11,7 +11,7 @@ void usage(char *name)
 int main(int argc, char *argv[])
 {	
 	int server_fd, client_fd, length = 0;  
-    struct sockaddr_in server_addr, client_addr;  
+    struct sockaddr_in server_addr;  
     socklen_t socklen = sizeof(server_addr);  
   
     if(argc < 2)  
@@ -30,11 +30,7 @@ int main(int argc, char *argv[])
 	        printf("create socket error, exit!\n");  
 	        exit(1);  
 	    }  
-	    srand(time(NULL));  
-	    bzero(&client_addr, sizeof(client_addr));  
-	    client_addr.sin_family = AF_INET;  
-	    client_addr.sin_addr.s_addr = htons(INADDR_ANY);  
-	  
+	    srand(time(NULL)); 
 	    bzero(&server_addr, sizeof(server_addr));  
 	    server_addr.sin_family = AF_INET;  
 	    inet_aton(argv[1], &server_addr.sin_addr);  

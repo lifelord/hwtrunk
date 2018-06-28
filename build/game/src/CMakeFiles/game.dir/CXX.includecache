@@ -31,6 +31,8 @@ base_stream.h
 ../base/include/base_stream.h
 base_socket.h
 ../base/include/base_socket.h
+base_signal.h
+../base/include/base_signal.h
 base_queue.h
 ../base/include/base_queue.h
 base_client_pool.h
@@ -63,6 +65,12 @@ base_lock.h
 ../base/include/base_sandbox.h
 base_util.h
 ../base/include/base_util.h
+
+../base/include/base_signal.h
+base_util.h
+../base/include/base_util.h
+base_lock.h
+../base/include/base_lock.h
 
 ../base/include/base_socket.h
 base_util.h
@@ -142,6 +150,8 @@ sys/time.h
 sys/types.h
 -
 sys/socket.h
+-
+signal.h
 -
 netinet/in.h
 -

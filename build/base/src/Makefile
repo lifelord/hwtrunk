@@ -206,6 +206,33 @@ base_sandbox.cpp.s:
 	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_sandbox.cpp.s
 .PHONY : base_sandbox.cpp.s
 
+base_signal.o: base_signal.cpp.o
+
+.PHONY : base_signal.o
+
+# target to build an object file
+base_signal.cpp.o:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_signal.cpp.o
+.PHONY : base_signal.cpp.o
+
+base_signal.i: base_signal.cpp.i
+
+.PHONY : base_signal.i
+
+# target to preprocess a source file
+base_signal.cpp.i:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_signal.cpp.i
+.PHONY : base_signal.cpp.i
+
+base_signal.s: base_signal.cpp.s
+
+.PHONY : base_signal.s
+
+# target to generate assembly for a file
+base_signal.cpp.s:
+	cd /home/game/server/hwtrunk/build && $(MAKE) -f base/src/CMakeFiles/base.dir/build.make base/src/CMakeFiles/base.dir/base_signal.cpp.s
+.PHONY : base_signal.cpp.s
+
 base_socket.o: base_socket.cpp.o
 
 .PHONY : base_socket.o
@@ -359,6 +386,9 @@ help:
 	@echo "... base_sandbox.o"
 	@echo "... base_sandbox.i"
 	@echo "... base_sandbox.s"
+	@echo "... base_signal.o"
+	@echo "... base_signal.i"
+	@echo "... base_signal.s"
 	@echo "... base_socket.o"
 	@echo "... base_socket.i"
 	@echo "... base_socket.s"

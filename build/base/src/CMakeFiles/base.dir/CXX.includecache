@@ -38,6 +38,12 @@ base_lock.h
 base_util.h
 ../base/include/base_util.h
 
+../base/include/base_signal.h
+base_util.h
+../base/include/base_util.h
+base_lock.h
+../base/include/base_lock.h
+
 ../base/include/base_socket.h
 base_util.h
 ../base/include/base_util.h
@@ -117,6 +123,8 @@ sys/types.h
 -
 sys/socket.h
 -
+signal.h
+-
 netinet/in.h
 -
 sys/epoll.h
@@ -147,6 +155,10 @@ base_epoll.h
 /home/game/server/hwtrunk/base/src/base_sandbox.cpp
 base_sandbox.h
 /home/game/server/hwtrunk/base/src/base_sandbox.h
+
+/home/game/server/hwtrunk/base/src/base_signal.cpp
+base_signal.h
+/home/game/server/hwtrunk/base/src/base_signal.h
 
 /home/game/server/hwtrunk/base/src/base_socket.cpp
 base_socket.h
